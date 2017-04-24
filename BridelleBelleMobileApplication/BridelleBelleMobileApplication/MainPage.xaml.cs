@@ -1,18 +1,25 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using System;
+using Xamarin.Forms;
 
 namespace BridelleBelleMobileApplication
 {
 	public partial class MainPage : ContentPage
 	{
 		Image magazine = new Image();
-		
+
 		public MainPage()
 		{
-			magazine.Source = ImageSource.FromFile("Images\\test_cover.jpg");
-			this.LoadFromXaml(typeof(MainPage));
-			var tapGesture = new TapGestureRecognizer();
-			tapGesture.SetBinding(TapGestureRecognizer.CommandProperty,"Tap Command");
+			InitializeComponent();
+			var tapImage = new TapGestureRecognizer();
+			tapImage.Tapped += tapImage_Tapped;
+			img.GestureRecognizers.Add(tapImage);
+			
+		}
+
+		void tapImage_Tapped(object sender, EventArgs e)
+		{
+			// handle the tap  
+			DisplayAlert("Alert", img.ToString(), "OK");
 		}
 	}
 }

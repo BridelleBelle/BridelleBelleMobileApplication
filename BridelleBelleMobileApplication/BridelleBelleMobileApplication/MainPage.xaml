@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:BridelleBelleMobileApplication"
              x:Class="BridelleBelleMobileApplication.MainPage">
 
-
     <Grid Padding="20" ColumnSpacing="10" RowSpacing="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -16,18 +15,12 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
+
         <Image x:Name="logo" HeightRequest="50" WidthRequest="20" Grid.ColumnSpan="2" BackgroundColor="Gray"></Image>
-        <!--<Button x:Name="northeastMag" Grid.Row="1"  Text="NE Magazine" TextColor="Black" BackgroundColor="Gray"></Button>-->
-        <Image x:Name="mag2" Grid.Row="1" HeightRequest="60" WidthRequest="10" BackgroundColor="Aqua"></Image>
-        <Image Grid.Row="2"  HeightRequest="40" WidthRequest="30" Source="Images\\test_cover.jpg" BackgroundColor="Aqua">
-            <Image.GestureRecognizers>
-            <TapGestureRecognizer x:Name="tapMagazine"></TapGestureRecognizer>
-            </Image.GestureRecognizers>
-        </Image>
+        <Image x:Name="img" Grid.Row="1" HeightRequest="60" WidthRequest="10" BackgroundColor="Aqua"></Image>
+        <Image Grid.Row="2"  HeightRequest="40" WidthRequest="30" Source="Images\\test_cover.jpg" BackgroundColor="Aqua"></Image>
         <Image x:Name="pic2" Grid.Row="1" Grid.Column="1" HeightRequest="60" WidthRequest="30" Source="Images\test_cover.jpg" BackgroundColor="Aqua"></Image>
         <Image Grid.Row="2" Grid.Column="1" HeightRequest="40" WidthRequest="30" Source="Images\test_cover.jpg" BackgroundColor="Aqua"></Image>
-        <!-- <Button x:Name="yorkshireMag" Grid.Row="1"  Grid.Column="1" Text="Yorkshire Magazine" TextColor="Black" BackgroundColor="Gray"></Button>-->
     </Grid>
 
 </ContentPage>
