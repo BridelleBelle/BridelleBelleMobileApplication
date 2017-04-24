@@ -4,8 +4,4 @@
              xmlns:local="clr-namespace:BridelleBelleMobileApplication"
              x:Class="BridelleBelleMobileApplication.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
 </ContentPage>
