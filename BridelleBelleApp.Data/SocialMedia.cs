@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BridelleBelleApp.Data
+﻿namespace BridelleBelleApp.Data
 {
-    class SocialMedia
-    {
-    }
+	public class SocialMedia
+	{
+		public string Name;
+		public string Handle;
+	}
 }
