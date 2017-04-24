@@ -1,0 +1,1 @@
+c:\users\danie\documents\visual studio 2017\Projects\BridelleBelleMobileApplication\BridelleBelleMobileApplication\BridelleBelleMobileApplication.Android\obj\Debug\BridelleBelleMobileApplication.Android.csprojResolveAssemblyReference.cache
