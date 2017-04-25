@@ -5,21 +5,25 @@ namespace BridelleBelleMobileApplication
 {
 	public partial class MainPage : ContentPage
 	{
-		Image magazine = new Image();
-
 		public MainPage()
 		{
 			InitializeComponent();
 			var tapImage = new TapGestureRecognizer();
 			tapImage.Tapped += tapImage_Tapped;
 			img.GestureRecognizers.Add(tapImage);
+			setImages();
 			
 		}
 
-		void tapImage_Tapped(object sender, EventArgs e)
+		async void tapImage_Tapped(object sender, EventArgs e)
 		{
 			// handle the tap  
-			DisplayAlert("Alert", img.ToString(), "OK");
+			await DisplayAlert("Alert", img.ToString(), "OK");
+		}
+
+		void setImages()
+		{
+			img.Source = "Images\\test_cover.jpg";
 		}
 	}
 }
