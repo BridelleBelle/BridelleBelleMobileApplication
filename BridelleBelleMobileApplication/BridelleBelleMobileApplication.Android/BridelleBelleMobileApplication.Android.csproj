@@ -380,7 +380,7 @@
     <AndroidAsset Include="Assets\pdfjs\web\locale\zh-TW\viewer.properties" />
     <AndroidAsset Include="Assets\pdfjs\web\locale\zu\viewer.properties" />
     <AndroidAsset Include="Assets\pdfjs\LICENSE" />
-    <AndroidAsset Include="Assets\Content\Bride&amp;Groom WeddingPlanner.pdf" />
+    <AndroidAsset Include="Assets\Content\Bride_GroomWeddingPlanner.pdf" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />

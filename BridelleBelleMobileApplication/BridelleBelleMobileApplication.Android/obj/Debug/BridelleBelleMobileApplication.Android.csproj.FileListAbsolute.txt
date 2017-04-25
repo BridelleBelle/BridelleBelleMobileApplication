@@ -68,3 +68,4 @@ F:\GitHub\BridelleBelleMobileApplication\BridelleBelleMobileApplication\Bridelle
 F:\GitHub\BridelleBelleMobileApplication\BridelleBelleMobileApplication\BridelleBelleMobileApplication.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 F:\GitHub\BridelleBelleMobileApplication\BridelleBelleMobileApplication\BridelleBelleMobileApplication.Android\obj\Debug\BridelleBelleMobileApplication.Droid.Resources.layout.Test.xaml.g.cs
 F:\GitHub\BridelleBelleMobileApplication\BridelleBelleMobileApplication\BridelleBelleMobileApplication.Android\obj\Debug\BridelleBelleMobileApplication.Android.dll.mdb
+F:\GitHub\BridelleBelleMobileApplication\BridelleBelleMobileApplication\BridelleBelleMobileApplication.Android\bin\Debug\BridelleBelleMobileApplication.Android.dll.mdb
