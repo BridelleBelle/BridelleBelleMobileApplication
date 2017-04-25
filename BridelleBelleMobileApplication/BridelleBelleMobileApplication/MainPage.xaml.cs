@@ -17,8 +17,8 @@ namespace BridelleBelleMobileApplication
 
 		async void tapImage_Tapped(object sender, EventArgs e)
 		{
-			// handle the tap  
-			await DisplayAlert("Alert", img.ToString(), "OK");
+			// handle the tap - load PDF here. 
+			 await DisplayAlert("Alert", img.ToString(), "OK");
 		}
 
 		void setImages()
