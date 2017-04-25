@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace BridelleBelleMobileApplication
@@ -12,6 +8,22 @@ namespace BridelleBelleMobileApplication
 		public MainPage()
 		{
 			InitializeComponent();
+			var tapImage = new TapGestureRecognizer();
+			tapImage.Tapped += tapImage_Tapped;
+			img.GestureRecognizers.Add(tapImage);
+			setImages();
+			
+		}
+
+		async void tapImage_Tapped(object sender, EventArgs e)
+		{
+			// handle the tap - load PDF here. 
+			 await DisplayAlert("Alert", img.ToString(), "OK");
+		}
+
+		void setImages()
+		{
+			img.Source = "Images\\test_cover.jpg";
 		}
 	}
 }
