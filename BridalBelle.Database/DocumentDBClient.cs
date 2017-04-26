@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using BelleBridal.Interfaces;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 
 namespace BridalBelle.Database
 {
-	public class DocumentDbClient<T>:IDataPersistence<T> where T: class
+	public class DocumentDbClient<T> where T: class
 	{
 		protected static string EndPointUri = "https://bridalbelle.documents.azure.com:443/";
 		protected static string AuthKey = "485YwqXC4WPxpAIPJp9coGwnkNk9jPlOx0kKYU0wheEQFidI3g5XZ9jc35YLgV9VDvaBhCpD1Q8dwIEjakaMiw==";
@@ -38,6 +40,13 @@ namespace BridalBelle.Database
 			{
 				throw e;
 			}
+		}
+
+		public async Task<IEnumerable<T>> GetAll()
+		{
+			var db = (await Client.ReadDatabaseFeedAsync()).Single(d => d.Id == DatabaseId);
+			var col = (await Client.ReadDocumentCollectionFeedAsync(db.CollectionsLink)).Single(c => c.Id == Collection);
+			return (dynamic)Client.CreateDocumentQuery(col.DocumentsLink).AsEnumerable();
 		}
 
 		public void Initialize(string collection)

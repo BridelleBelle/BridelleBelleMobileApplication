@@ -12,7 +12,7 @@ namespace BridelleBelleMobileApplication
 			tapImage.Tapped += tapImage_Tapped;
 			img.GestureRecognizers.Add(tapImage);
 			setImages();
-			
+			//GetMagazine mag = new GetMagazine();
 		}
 
 		async void tapImage_Tapped(object sender, EventArgs e)

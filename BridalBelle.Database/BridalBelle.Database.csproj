@@ -55,10 +55,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BelleBridal.Interfaces\BelleBridal.Interfaces.csproj">
-      <Project>{107a86b1-ec6f-4f45-af43-7a1efdf97ce9}</Project>
-      <Name>BelleBridal.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BridalBelle.Data\BridalBelle.Data.csproj">
       <Project>{a6b90dff-3a2e-4022-bde7-1f998da655d3}</Project>
       <Name>BridalBelle.Data</Name>
