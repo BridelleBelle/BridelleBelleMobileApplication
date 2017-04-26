@@ -22,5 +22,4 @@
         <Image x:Name="pic2" Grid.Row="1" Grid.Column="1" HeightRequest="60" WidthRequest="30" Source="Images\test_cover.jpg" BackgroundColor="Aqua"></Image>
         <Image Grid.Row="2" Grid.Column="1" HeightRequest="40" WidthRequest="30" Source="Images\test_cover.jpg" BackgroundColor="Aqua"></Image>
     </Grid>
-
 </ContentPage>

@@ -7,7 +7,19 @@ namespace BridelleBelleMobileApplication
 	{
 		public MainPage()
 		{
-			InitializeComponent();
+            Padding = new Thickness(0, 20, 0, 0);
+            Content = new StackLayout
+            {
+                Children =
+                {
+                    new CustomWebView
+                    {
+                        Uri = "Bride_GroomWeddingPlanner.pdf",
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                        VerticalOptions = LayoutOptions.FillAndExpand
+                    }
+                }
+            };
 			var tapImage = new TapGestureRecognizer();
 			tapImage.Tapped += tapImage_Tapped;
 			img.GestureRecognizers.Add(tapImage);
@@ -24,6 +36,6 @@ namespace BridelleBelleMobileApplication
 		void setImages()
 		{
 			img.Source = "Images\\test_cover.jpg";
-		}
+        }
 	}
 }
