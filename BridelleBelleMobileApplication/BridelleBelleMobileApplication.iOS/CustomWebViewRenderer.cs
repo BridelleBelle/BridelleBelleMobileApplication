@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net;
-using Foundation;
-using UIKit;
-using BridelleBelleMobileApplication;
-using BridelleBelleMobileApplication.iOS;
+﻿using BridelleBelleMobileApplication.iOS;
 
 [assembly: ExportRenderer(typeof(CustomWebView), typeof(CustomWebViewRenderer))]
 namespace BridelleBelleMobileApplication.iOS
