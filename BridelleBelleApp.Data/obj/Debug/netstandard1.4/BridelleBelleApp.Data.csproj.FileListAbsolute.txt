@@ -1,0 +1,7 @@
+F:\GitHub\BridelleBelleMobileApplication\BridelleBelleApp.Data\bin\Debug\netstandard1.4\BridelleBelleApp.Data.deps.json
+F:\GitHub\BridelleBelleMobileApplication\BridelleBelleApp.Data\bin\Debug\netstandard1.4\BridelleBelleApp.Data.dll
+F:\GitHub\BridelleBelleMobileApplication\BridelleBelleApp.Data\bin\Debug\netstandard1.4\BridelleBelleApp.Data.pdb
+F:\GitHub\BridelleBelleMobileApplication\BridelleBelleApp.Data\obj\Debug\netstandard1.4\BridelleBelleApp.Data.csprojResolveAssemblyReference.cache
+F:\GitHub\BridelleBelleMobileApplication\BridelleBelleApp.Data\obj\Debug\netstandard1.4\BridelleBelleApp.Data.AssemblyInfo.cs
+F:\GitHub\BridelleBelleMobileApplication\BridelleBelleApp.Data\obj\Debug\netstandard1.4\BridelleBelleApp.Data.dll
+F:\GitHub\BridelleBelleMobileApplication\BridelleBelleApp.Data\obj\Debug\netstandard1.4\BridelleBelleApp.Data.pdb

@@ -7,35 +7,31 @@ namespace BridelleBelleMobileApplication
 	{
 		public MainPage()
 		{
-            Padding = new Thickness(0, 20, 0, 0);
-            Content = new StackLayout
-            {
-                Children =
-                {
-                    new CustomWebView
-                    {
-                        Uri = "Bride_GroomWeddingPlanner.pdf",
-                        HorizontalOptions = LayoutOptions.FillAndExpand,
-                        VerticalOptions = LayoutOptions.FillAndExpand
-                    }
-                }
-            };
-			var tapImage = new TapGestureRecognizer();
+            InitializeComponent();
+
+            // MainPage had navigation bar with no Nav just white bar (even though it's meant to be false by default)
+            NavigationPage.SetHasNavigationBar(this, false); 
+
+            var tapImage = new TapGestureRecognizer();
 			tapImage.Tapped += tapImage_Tapped;
 			img.GestureRecognizers.Add(tapImage);
-			setImages();
-			
+			//setImages();
 		}
 
-		async void tapImage_Tapped(object sender, EventArgs e)
+		void tapImage_Tapped(object sender, EventArgs e)
 		{
-			// handle the tap - load PDF here. 
-			 await DisplayAlert("Alert", img.ToString(), "OK");
-		}
+            // handle the tap - load PDF here. 
+            var pdf = new ViewPDF();
+
+            //NavigationPage.SetBackButtonTitle(pdf, "Return");
+            NavigationPage.SetHasNavigationBar(pdf, false);
+
+            Navigation.PushAsync(pdf);
+        }
 
 		void setImages()
 		{
 			img.Source = "Images\\test_cover.jpg";
         }
-	}
+    }
 }

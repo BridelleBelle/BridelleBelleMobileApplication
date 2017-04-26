@@ -16,7 +16,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="logo" HeightRequest="50" WidthRequest="20" Grid.ColumnSpan="2" BackgroundColor="Gray"></Image>
+        <Image x:Name="logo" HeightRequest="100" WidthRequest="100" Grid.ColumnSpan="2" Source="logo.png"></Image>
         <Image x:Name="img" Grid.Row="1" HeightRequest="60" WidthRequest="10" BackgroundColor="Aqua"></Image>
         <Image Grid.Row="2"  HeightRequest="40" WidthRequest="30" Source="Images\\test_cover.jpg" BackgroundColor="Aqua"></Image>
         <Image x:Name="pic2" Grid.Row="1" Grid.Column="1" HeightRequest="60" WidthRequest="30" Source="Images\test_cover.jpg" BackgroundColor="Aqua"></Image>
