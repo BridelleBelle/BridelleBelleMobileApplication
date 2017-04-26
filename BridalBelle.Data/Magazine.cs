@@ -1,16 +1,27 @@
-﻿namespace BridelleBelleApp.Data
+﻿using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
+using Newtonsoft.Json;
+
+namespace BridalBelle.Data
 {
 	public class Magazine
 	{
-		public long ID;
+		[JsonProperty("id")]
+		public string Id;
+		[JsonProperty("name")]
 		public string Name;
+		[JsonProperty("version")]
 		public string Version;
-		public string issue;
-		public string Pages;
+		[JsonProperty("issue")]
+		public string Issue;
+		[JsonProperty("pages")]
+		public int Pages;
 
-		public byte[] PDF; //shouldnt probably be a byte. just a dummy object for now
-		public byte[] CoverImage;
+		[JsonProperty("pdf")]
+		public string PDF; //shouldnt probably be a byte. just a dummy object for now
+		[JsonProperty("coverImage")]
+		public string CoverImage;
 
-		Advertiser Advertiser;
+		//public Advertiser Advertiser;
 	}
 }

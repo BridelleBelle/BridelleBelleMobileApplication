@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BridelleBelleApp.Data
+namespace BridalBelle.Data
 {
 	public class Advertiser
 	{
