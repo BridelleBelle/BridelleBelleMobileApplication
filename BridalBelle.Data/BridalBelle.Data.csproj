@@ -46,6 +46,7 @@
     <Compile Include="Address.cs" />
     <Compile Include="Advertiser.cs" />
     <Compile Include="Magazine.cs" />
+    <Compile Include="MagazineAdvertiser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SocialMedia.cs" />
     <Compile Include="Voucher.cs" />

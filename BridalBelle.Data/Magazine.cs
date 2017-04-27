@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace BridalBelle.Data
@@ -16,12 +15,16 @@ namespace BridalBelle.Data
 		public string Issue;
 		[JsonProperty("pages")]
 		public int Pages;
-
+		[JsonProperty("pdfFileName")]
+		public string PdfFileName; //shouldnt probably be a byte. just a dummy object for now
 		[JsonProperty("pdf")]
-		public string PDF; //shouldnt probably be a byte. just a dummy object for now
+		public byte[] PDF;
+		[JsonProperty("coverImageFileName")]
+		public string CoverImageFileName;
 		[JsonProperty("coverImage")]
-		public string CoverImage;
+		public byte[] CoverImage;
 
-		//public Advertiser Advertiser;
+		[JsonProperty("advertisers")]
+		public IEnumerable<MagazineAdvertiser> Advertisers;
 	}
 }

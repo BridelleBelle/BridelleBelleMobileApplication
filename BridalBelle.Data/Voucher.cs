@@ -5,7 +5,7 @@ namespace BridalBelle.Data
 	public class Voucher
 	{
 		public string Code;
-
+		public int Page;
 		public string GenerateVoucher()
 		{
 			var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz1234567890";
