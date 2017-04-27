@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace BridalBelle.Data
 {
 	public class Advertiser
 	{
 		[JsonProperty("id")]
-		public string Id;
+		public long ID;
 		[JsonProperty("name")]
 		public string Name;
 		[JsonProperty("email")]
@@ -16,7 +15,6 @@ namespace BridalBelle.Data
 		public string Telephone;
 		[JsonProperty("website")]
 		public string Website;
-
 		[JsonProperty("address")]
 		public Address Address;
 		[JsonProperty("socialMedia")]
