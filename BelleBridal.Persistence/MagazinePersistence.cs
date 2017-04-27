@@ -11,7 +11,7 @@ namespace BelleBridal.Persistence
 
 		public MagazinePersistence()
 		{
-			Client = new DocumentDbClient<Magazine>();
+			Client = new DocumentDbClient<Magazine>("magazines");
 		}
 
 		public async Task<Magazine> Get(string id)
