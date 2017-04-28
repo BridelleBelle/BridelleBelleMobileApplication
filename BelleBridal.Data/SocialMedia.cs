@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
-namespace BridalBelle.Data
+namespace BelleBridal.Data
 {
 	public class SocialMedia
 	{

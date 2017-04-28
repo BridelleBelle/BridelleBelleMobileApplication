@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BridalBelle.Data
+namespace BelleBridal.Data
 {
 	public class Voucher
 	{

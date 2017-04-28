@@ -1,27 +1,21 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using BridalBelle.Data;
-using BridalBelle.Database;
+﻿using System.Threading.Tasks;
+using BelleBridal.Client;
+using BelleBridal.Data;
 
 namespace BelleBridal.Persistence
 {
 	public class MagazinePersistence
 	{
-		public DocumentDbClient<Magazine> Client;
+		private MagazineController Controller;
 
 		public MagazinePersistence()
 		{
-			Client = new DocumentDbClient<Magazine>("magazines");
+			Controller = new MagazineController();
 		}
 
-		public async Task<Magazine> Get(string id)
+		public async Task<Magazine> GetMagazine(long id)
 		{
-			return await Client.Get(id);
-		}
-
-		public async Task<IEnumerable<Magazine>> GetAll()
-		{
-			return await Client.GetAll();
+			return await Controller.GetMagazine(id);
 		}
 	}
 }

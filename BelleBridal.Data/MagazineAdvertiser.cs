@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace BridalBelle.Data
+namespace BelleBridal.Data
 {
 	public class MagazineAdvertiser
 	{

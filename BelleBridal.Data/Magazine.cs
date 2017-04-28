@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace BridalBelle.Data
+namespace BelleBridal.Data
 {
 	public class Magazine
 	{
