@@ -4,7 +4,17 @@
              x:Class="BridelleBelleMobileApplication.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="BorderColor" Value="Lime" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="TextColor" Value="Teal" />
+                <Setter Property="BackgroundColor" Value="Yellow"/>
+            </Style>
+        </ResourceDictionary>
 
 	</Application.Resources>
 </Application>

@@ -16,7 +16,14 @@ namespace BridelleBelleMobileApplication
 		{
 			InitializeComponent ();
 
-            Padding = new Thickness(0, 20, 0, 0);
+            Button button = new Button
+            {
+                Text = "Click for Advertiser Information!",
+                Style = (Style)Application.Current.Resources["buttonStyle"]
+            };
+            button.Clicked += Handle_Clicked;
+
+            Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
             Content = new StackLayout
             {
                 Children =
@@ -26,9 +33,15 @@ namespace BridelleBelleMobileApplication
                         Uri = "Bride_GroomWeddingPlanner.pdf",
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.FillAndExpand
-                    }
+                    },
+                    button
                 }
             };
+        }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new Advertisers());
         }
 	}
 }

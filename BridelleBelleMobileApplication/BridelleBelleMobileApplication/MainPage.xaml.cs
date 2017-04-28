@@ -23,7 +23,7 @@ namespace BridelleBelleMobileApplication
             // handle the tap - load PDF here. 
             var pdf = new ViewPDF();
 
-            //NavigationPage.SetBackButtonTitle(pdf, "Return");
+            //NavigationPage.SetBackButtonTitle(pdf, "PDF Viewer");
             NavigationPage.SetHasNavigationBar(pdf, false);
 
             Navigation.PushAsync(pdf);
