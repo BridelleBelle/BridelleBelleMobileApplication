@@ -48,10 +48,6 @@
       <Project>{626b8d97-9b5b-41ba-bc0a-58c8bff76d87}</Project>
       <Name>BridalBelle.Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BridalBelle.Data\BridalBelle.Data.csproj">
-      <Project>{a6b90dff-3a2e-4022-bde7-1f998da655d3}</Project>
-      <Name>BridalBelle.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
