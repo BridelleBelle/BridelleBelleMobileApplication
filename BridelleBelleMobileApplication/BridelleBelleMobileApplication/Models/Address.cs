@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace BridalBelle.Data
+namespace BridelleBelleMobileApplication.Models
 {
 	public class Address
 	{
