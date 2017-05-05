@@ -24,14 +24,9 @@ namespace BridelleBelleMobileApplication
 		async void tapImage_Tapped(object sender, EventArgs e)
 		{
 			// handle the tap - load PDF here. 
-		    if (x != null && x != "")
-		    {
-		        await DisplayAlert("Alert", x, "OK");
-		    }
-		    else
-		    {
-		        await DisplayAlert("Alert", "Mag is null", "OK");
-		    }
+		   
+		        await DisplayAlert("Alert", mag.Id, "OK");
+		    
 		}
 
 		void setImages()
@@ -45,8 +40,7 @@ namespace BridelleBelleMobileApplication
 	        base.OnAppearing();
 	        //await App.Man.docDb.CreateDatabase();
 	        mag = await App.Manager.Get();
-	        await App.blob.Initialize();
-	        await App.blob.GetCoverImages();
+	        x = await App.blob.GetImage();
 	    }
     }
 }
