@@ -15,15 +15,15 @@ namespace BridelleBelleMobileApplication
 
 	    void OnStart()
 	    {
-	        var tapImage = new TapGestureRecognizer();
-	        tapImage.Tapped += tapImage_Tapped;
-	        img.GestureRecognizers.Add(tapImage);
+            var tapImage = new TapGestureRecognizer();
+            tapImage.Tapped += tapImage_Tapped;
+            NEMag1.GestureRecognizers.Add(tapImage);
         }
 
-		async void tapImage_Tapped(object sender, EventArgs e)
-		{
-			// handle the tap - load PDF here. 
-		    if (mag != null)
+        async void tapImage_Tapped(object sender, EventArgs e)
+        {
+            // handle the tap - load PDF here. 
+            await DisplayAlert("Alert", NEMag1.ToString(), "OK");
 		    {
 		        await DisplayAlert("Alert", mag.Id, "OK");
 		    }
@@ -31,12 +31,7 @@ namespace BridelleBelleMobileApplication
 		    {
 		        await DisplayAlert("Alert", "Mag is null", "OK");
 		    }
-		}
-
-		void setImages()
-		{
-			img.Source = "Images\\test_cover.jpg";
-		}
+        }
 
 
 	    protected override async void OnAppearing()
