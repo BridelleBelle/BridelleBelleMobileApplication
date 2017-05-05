@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace BridelleBelleApp.Data
+namespace BridelleBelleMobileApplication.Models
 {
 	public class Voucher
 	{
 		public string Code;
-
+		public int Page;
 		public string GenerateVoucher()
 		{
 			var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz1234567890";
