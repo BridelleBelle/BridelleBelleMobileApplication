@@ -7,7 +7,8 @@ namespace BridelleBelleMobileApplication
 	public partial class MainPage : ContentPage
 	{
 	    private Magazine mag;
-		public MainPage()
+	    private string x = System.String.Empty;
+        public MainPage()
 		{
 			InitializeComponent();
             OnStart();
@@ -23,9 +24,9 @@ namespace BridelleBelleMobileApplication
 		async void tapImage_Tapped(object sender, EventArgs e)
 		{
 			// handle the tap - load PDF here. 
-		    if (mag != null)
+		    if (x != null && x != "")
 		    {
-		        await DisplayAlert("Alert", mag.Id, "OK");
+		        await DisplayAlert("Alert", x, "OK");
 		    }
 		    else
 		    {
@@ -44,6 +45,8 @@ namespace BridelleBelleMobileApplication
 	        base.OnAppearing();
 	        //await App.Man.docDb.CreateDatabase();
 	        mag = await App.Manager.Get();
+	        await App.blob.Initialize();
+	        await App.blob.GetCoverImages();
 	    }
     }
 }

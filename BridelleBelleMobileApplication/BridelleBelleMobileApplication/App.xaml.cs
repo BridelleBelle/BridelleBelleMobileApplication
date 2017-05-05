@@ -12,12 +12,14 @@ namespace BridelleBelleMobileApplication
 	{
 	    public static List<Magazine> Magazines;
 	    public static MagazineManager Manager;
+	    public static BlobStorage blob;
 		public App ()
 		{
 			InitializeComponent();
 
 			MainPage = new BridelleBelleMobileApplication.MainPage();
             Manager = new MagazineManager();
+            blob = new BlobStorage();
 
 		}
 

@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)BlobStorage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Database\DocumnetDBClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MagazineManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
