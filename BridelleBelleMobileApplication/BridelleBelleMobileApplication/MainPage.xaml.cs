@@ -24,20 +24,12 @@ namespace BridelleBelleMobileApplication
         {
             // handle the tap - load PDF here. 
             await DisplayAlert("Alert", NEMag1.ToString(), "OK");
-		    {
-		        await DisplayAlert("Alert", mag.Id, "OK");
-		    }
-		    else
-		    {
-		        await DisplayAlert("Alert", "Mag is null", "OK");
-		    }
         }
 
 
 	    protected override async void OnAppearing()
 	    {
 	        base.OnAppearing();
-	        //await App.Man.docDb.CreateDatabase();
 	        mag = await App.Manager.Get();
 	    }
     }
