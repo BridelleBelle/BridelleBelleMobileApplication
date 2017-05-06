@@ -23,14 +23,21 @@ namespace BridelleBelleMobileApplication
         async void tapImage_Tapped(object sender, EventArgs e)
         {
             // handle the tap - load PDF here. 
-            await DisplayAlert("Alert", NEMag1.ToString(), "OK");
+            await DisplayAlert("Alert", mag.Id, "OK");
         }
 
 
 	    protected override async void OnAppearing()
 	    {
 	        base.OnAppearing();
-	        mag = await App.Manager.Get();
+	        try
+	        {
+	            mag = await App.Manager.Get();
+	        }
+	        catch (Exception e)
+	        {
+	            
+	        }
 	    }
     }
 }
