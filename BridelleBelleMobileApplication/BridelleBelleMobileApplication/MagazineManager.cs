@@ -27,5 +27,10 @@ namespace BridelleBelleMobileApplication
 		{
 			return await Client.GetImages(ImageType.CoverImages, fileName);
 		}
+
+		public List<Magazine> GetLatest()
+		{
+			return docDb.GetLatest();
+		}
 	}
 }

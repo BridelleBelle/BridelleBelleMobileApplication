@@ -26,5 +26,8 @@ namespace BridelleBelleMobileApplication.Models
 
 		[JsonProperty("advertisers")]
 		public IEnumerable<MagazineAdvertiser> Advertisers;
+
+		[JsonProperty("magazineContent")]
+		public IEnumerable<MagazineContent> MagazineContent;
 	}
 }

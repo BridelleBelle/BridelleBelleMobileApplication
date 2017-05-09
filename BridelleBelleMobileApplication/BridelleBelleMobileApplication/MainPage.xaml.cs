@@ -3,11 +3,15 @@ using BridelleBelleMobileApplication.Models;
 using Xamarin.Forms;
 using System.IO;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace BridelleBelleMobileApplication
 {
 	public partial class MainPage : ContentPage
 	{
-	    private Magazine mag;
+// private Magazine mag;
+		private IEnumerable<Magazine> Magazines;
 		public MainPage()
 		{
 			InitializeComponent();
@@ -31,7 +35,7 @@ namespace BridelleBelleMobileApplication
 	        base.OnAppearing();
 	        try
 	        {
-	            mag = await App.Manager.Get();
+	            Magazines = App.Manager.GetLatest();
 	            await GetCovers();
 	        }
 	        catch (Exception e)
@@ -42,9 +46,19 @@ namespace BridelleBelleMobileApplication
 
 	    public async Task GetCovers()
 	    {
-	        var bytes = Convert.FromBase64String(await App.Manager.GetCovers(mag.CoverImageFileName));
-	        Stream stream = new MemoryStream(bytes);
-	        NEMag2.Source = ImageSource.FromStream(() => { return stream; });
+		    var streams = new List<Image>
+		    {
+			    NEMag1,
+				NEMag2,
+				YMag1,
+				YMag2
+		    };
+		    for(var i = 0;i< 4; i++)
+		    {
+				var bytes = Convert.FromBase64String(await App.Manager.GetCovers(Magazines.ToList()[i].CoverImageFileName));
+			    Stream stream = new MemoryStream(bytes);
+			    streams[i].Source = ImageSource.FromStream(() => { return stream; });
+			}
         }
     }
 }
