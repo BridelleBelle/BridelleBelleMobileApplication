@@ -17,9 +17,9 @@
 
         <Image x:Name="logo" HeightRequest="150" WidthRequest="100" Grid.ColumnSpan="2" Source="logo.png"></Image>
         <Image x:Name="NEMag1" Grid.Row="1" HeightRequest="185" WidthRequest="30" BackgroundColor="#0000ff"></Image> <!--Blue / Top Left-->
-        <Image x:Name="NEMag2" Grid.Row="2"  HeightRequest="40" WidthRequest="30" Source="cover.jpg" BackgroundColor="#ffff00"></Image> <!--Yellow / Bottom Left-->
-        <Image x:Name="YMag1" Grid.Row="1" Grid.Column="1" HeightRequest="40" WidthRequest="30" Source="cover.jpg" BackgroundColor="#009933"></Image> <!--Green / Top Right-->
-        <Image x:Name="YMag2" Grid.Row="2" Grid.Column="1" HeightRequest="40" WidthRequest="30" Source="cover.jpg" BackgroundColor="#ff0000"></Image> <!--Red / Bottom Right-->
+        <Image x:Name="NEMag2" Grid.Row="2"  HeightRequest="40" WidthRequest="30"  BackgroundColor="#ffff00"></Image> <!--Yellow / Bottom Left-->
+        <Image x:Name="YMag1" Grid.Row="1" Grid.Column="1" HeightRequest="40" WidthRequest="30" BackgroundColor="#009933"></Image> <!--Green / Top Right-->
+        <Image x:Name="YMag2" Grid.Row="2" Grid.Column="1" HeightRequest="40" WidthRequest="30" BackgroundColor="#ff0000"></Image> <!--Red / Bottom Right-->
     </Grid>
 
 </ContentPage>
