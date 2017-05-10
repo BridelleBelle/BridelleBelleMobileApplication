@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BridelleBelleMobileApplication.PageViewer"
-             xmlns:custom="clr-namespace:PageViewer.Controls;assembly=PageViewer"
-             x:Name="ThePage">
+             x:Class="BridelleBelleMobileApplication.MagazineViewer"
+        
+             xmlns:controller="clr-namespace:BridelleBelleMobileApplication.Controller"
+             x:Name="ThePage"
+             BackgroundColor="Black">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -11,20 +13,27 @@
                 <RowDefinition Height="128"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Source="cover.jpg" Grid.Row=""></Image>
-
-            <custom.ImageGallery ItemsSource="{Binding Image}" Grid.Row="1">
-                <DataTemplate>
-                    <Image x:Name="bigimg" Source="cover.jpg" Aspect="AspectFit">
-                        <Label Text="niggaz"></Label>
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer
-                                command="{Binding Path=BindingContext.PreviewImageCommand,Source={x:Reference ThePage}}"
-                                commandParameter="{Binding ImageId}"></TapGestureRecognizer>
-                        </Image.GestureRecognizers>
-                    </Image>
-                </DataTemplate>
-            </custom.ImageGallery>
+            <Image Source="cover.jpg" Grid.Row="0"></Image>
+            
+            
+            
+            <controller:PageView
+              
+                Grid.Row="1">
+                <controller:PageView.ItemTemplate>
+                    <DataTemplate>
+                        <Image
+                            Source="{Binding Source}"
+                            Aspect="AspectFit">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Path=BindingContext.PreviewImageCommand, Source={x:Reference ThePage}}"
+                                    CommandParameter="{Binding ImageId}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </DataTemplate>
+                </controller:PageView.ItemTemplate>
+            </controller:PageView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

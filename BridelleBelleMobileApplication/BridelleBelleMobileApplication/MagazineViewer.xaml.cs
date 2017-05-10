@@ -14,9 +14,16 @@ namespace BridelleBelleMobileApplication
 	{
 		public MagazineViewer ()
 		{
-			//InitializeComponent ();
-			var ImageId = 22;
-			BindingContext = new PageView();
+			try
+			{
+				InitializeComponent();
+				var ImageId = 22;
+				BindingContext = new PageView();
+			}
+			catch (Exception e)
+			{
+				
+			}
 		}
 	}
 }

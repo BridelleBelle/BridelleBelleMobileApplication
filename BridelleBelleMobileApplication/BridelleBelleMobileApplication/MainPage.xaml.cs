@@ -28,8 +28,15 @@ namespace BridelleBelleMobileApplication
 
 		async void tapImage_Tapped(object sender, EventArgs e)
 		{
-			var magView = new MagazineViewer();
-			Navigation.PushAsync(magView);
+			try
+			{
+				var magView = new MagazineViewer();
+				Navigation.PushAsync(magView);
+			}
+			catch (Exception ex)
+			{
+				
+			}
 		}
 
 		protected override async void OnAppearing()
