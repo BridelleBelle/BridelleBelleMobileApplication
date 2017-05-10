@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace BridelleBelleMobileApplication.Droid
 {
-    public class ImageAdapater:PagerAdapter
+    public class ImageAdapater : PagerAdapter
     {
         private Context context;
         private int[] imageList =

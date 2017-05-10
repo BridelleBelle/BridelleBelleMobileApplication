@@ -21,7 +21,7 @@ namespace BridelleBelleMobileApplication
 		void tapImage_Tapped(object sender, EventArgs e)
 		{
             // handle the tap - load PDF here. 
-            var pdf = new ViewPDF();
+            var pdf = new ImageGallery();
 
             //NavigationPage.SetBackButtonTitle(pdf, "PDF Viewer");
             NavigationPage.SetHasNavigationBar(pdf, false);
