@@ -28,7 +28,8 @@ namespace BridelleBelleMobileApplication
 
 		async void tapImage_Tapped(object sender, EventArgs e)
 		{
-			// handle the tap - load PDF here. 
+			var magView = new MagazineViewer();
+			Navigation.PushAsync(magView);
 		}
 
 		protected override async void OnAppearing()
