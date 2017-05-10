@@ -56,7 +56,7 @@ namespace BridelleBelleMobileApplication.Database
 			try
 			{
 				// Create collection with 400 RU/s
-				await Client.CreateDocumentCollectionIfNotExistsAsync(
+				var x = await Client.CreateDocumentCollectionIfNotExistsAsync(
 					UriFactory.CreateDatabaseUri("bridalbelle"),
 					new DocumentCollection
 					{
@@ -73,15 +73,21 @@ namespace BridelleBelleMobileApplication.Database
 			}
 		}
 
-		public async Task<List<Magazine>> GetMagazine()
+		public List<Magazine> GetLatest()
 		{
-		    return null;
+			var magazines = new List<Magazine>();
+			foreach (var m in Client.CreateDocumentQuery<Magazine>(UriFactory.CreateDocumentCollectionUri("bridalbelle","magazines"), "SELECT TOP 4 * FROM magazines"))
+			{
+				magazines.Add(m);
+			}
+
+			return magazines;
 		}
 
 		public async Task<Magazine> Get(string id)
 		{
-		    var response = await Client.ReadDocumentAsync(UriFactory.CreateDocumentUri("bridalbelle", "magazines", "4"));
-		    return (Magazine) (dynamic) response.Resource;
+			var response = await Client.ReadDocumentAsync(UriFactory.CreateDocumentUri("bridalbelle", "magazines", "4"));
+			return (Magazine) (dynamic) response.Resource;
 		}
 	}
 }

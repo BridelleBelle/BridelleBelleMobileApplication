@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BridelleBelleMobileApplication.Types;
 using Newtonsoft.Json;
 
 namespace BridelleBelleMobileApplication.Models
@@ -10,7 +11,7 @@ namespace BridelleBelleMobileApplication.Models
 		[JsonProperty("name")]
 		public string Name;
 		[JsonProperty("version")]
-		public string Version;
+		public MagazineVersion Version;
 		[JsonProperty("issue")]
 		public string Issue;
 		[JsonProperty("pages")]
@@ -26,5 +27,8 @@ namespace BridelleBelleMobileApplication.Models
 
 		[JsonProperty("advertisers")]
 		public IEnumerable<MagazineAdvertiser> Advertisers;
+
+		[JsonProperty("magazineContent")]
+		public IEnumerable<MagazineContent> MagazineContent;
 	}
 }

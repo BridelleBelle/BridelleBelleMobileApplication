@@ -22,9 +22,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Advertiser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Magazine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MagazineAdvertiser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MagazineContent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SocialMedia.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Voucher.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types\ImageType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\MagazineVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">

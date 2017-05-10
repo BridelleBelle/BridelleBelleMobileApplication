@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using BridelleBelleMobileApplication.Database;
 using System.Threading.Tasks;
 using BridelleBelleMobileApplication.Models;
@@ -18,14 +16,14 @@ namespace BridelleBelleMobileApplication
 			Client = new ImageClient();
 		}
 
-		public Task<Magazine> Get()
-		{
-			return docDb.Get("4");
-		}
-
 		public async Task<string> GetCovers(string fileName)
 		{
 			return await Client.GetImages(ImageType.CoverImages, fileName);
+		}
+
+		public List<Magazine> GetLatest()
+		{
+			return docDb.GetLatest();
 		}
 	}
 }
