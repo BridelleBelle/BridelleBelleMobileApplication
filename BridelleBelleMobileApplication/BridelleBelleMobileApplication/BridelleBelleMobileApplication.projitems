@@ -15,6 +15,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ImageGallery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GalleryImage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PDF\CustomWebView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
