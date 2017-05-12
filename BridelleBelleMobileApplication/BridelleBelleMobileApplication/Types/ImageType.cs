@@ -4,6 +4,7 @@
 	{
 		CoverImages,
 		Thumbnail,
-		MagazinePage
+		MagazinePage,
+		Magazines
 	}
 }

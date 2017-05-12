@@ -25,5 +25,15 @@ namespace BridelleBelleMobileApplication
 		{
 			return docDb.GetLatest();
 		}
+
+		public IEnumerable<MagazineContent> GetMagazinePages(IEnumerable<MagazineContent> content)
+		{
+			foreach (var mag in content)
+			{
+				mag.Base64Value = Client.GetImageUris(ImageType.Magazines, mag.FileName);
+			}
+
+			return content;
+		}
 	}
 }
