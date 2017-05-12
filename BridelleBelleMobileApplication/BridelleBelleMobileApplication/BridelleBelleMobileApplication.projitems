@@ -14,6 +14,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Database\DocumnetDBClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Database\ImageClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ImageHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MagazineManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -25,6 +26,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\MagazineContent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SocialMedia.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Voucher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Types\ImageType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types\MagazineVersion.cs" />
   </ItemGroup>
@@ -35,6 +39,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
