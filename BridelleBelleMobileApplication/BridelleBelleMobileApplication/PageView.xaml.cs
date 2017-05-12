@@ -38,7 +38,7 @@ namespace BridelleBelleMobileApplication
 
 			foreach (var uri in this.Magazine.MagazineContent)
 			{
-				images.Add(uri.Base64Value);
+				images.Add(uri.Uri);
 			}
 
 			return images;

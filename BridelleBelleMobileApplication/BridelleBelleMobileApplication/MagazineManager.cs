@@ -30,7 +30,7 @@ namespace BridelleBelleMobileApplication
 		{
 			foreach (var mag in content)
 			{
-				mag.Base64Value = Client.GetImageUris(ImageType.Magazines, mag.FileName);
+				mag.Uri = Client.GetImageUris(ImageType.Magazines, mag.FileName);
 			}
 
 			return content;

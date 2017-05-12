@@ -10,7 +10,7 @@ namespace BridelleBelleMobileApplication.Models
 		public byte[] PageImage;
 		[JsonProperty("fileName")]
 		public string FileName;
-
-		[JsonProperty("base64Val")] public string Base64Value;
+		[JsonProperty("uri")]
+		public string Uri;
 	}
 }
