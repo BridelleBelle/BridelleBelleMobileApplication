@@ -15,9 +15,9 @@ namespace BridelleBelleMobileApplication
 	{
 		private int cap = 20;
 		private int currLoad = 0;
-
 		private Magazine Magazine;
 		private List<Image> Images;
+
 		public PageView (Magazine mag)
 		{
 			InitializeComponent ();

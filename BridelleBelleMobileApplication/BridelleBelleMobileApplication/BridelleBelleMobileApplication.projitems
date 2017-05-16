@@ -14,6 +14,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Database\DocumnetDBClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Database\ImageClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DoubleExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ImageHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MagazineManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
@@ -29,6 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)PageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PinchGestureHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types\ImageType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types\MagazineVersion.cs" />
   </ItemGroup>
@@ -46,5 +48,8 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)PageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
   </ItemGroup>
 </Project>
