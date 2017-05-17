@@ -1,26 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-             xmlns:local="clr-namespace:BridelleBelleMobileApplication"
-             x:Class="BridelleBelleMobileApplication.PageView">
-    <ContentPage.Content>
-    <StackLayout>
-            <Label Text="Carousel Images" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-           
-                <forms:CarouselView x:Name="MainCarouselView" ItemSelected="MainCarouselView_ItemSelected">
-                    <forms:CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding .}" Aspect="AspectFit"/>
-                        </DataTemplate>
-                    </forms:CarouselView.ItemTemplate>
-                </forms:CarouselView>
-            
-
-            <Image x:Name="CarouselImages"/>
-        <Label x:Name="MainLabel"/>
-    </StackLayout>
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+xmlns:local="clr-namespace:BridelleBelleMobileApplication"
+x:Class="BridelleBelleMobileApplication.PageView">
+        <ContentPage.Content>
+        <local:PinchGestureHelper>
+            <local:PinchGestureHelper.Content>
+                <StackLayout>
+                    <forms:CarouselView x:Name="MainCarouselView" ItemSelected="MainCarouselView_ItemSelected" >
+                        <forms:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding .}" Aspect="AspectFit" HeightRequest="185" WidthRequest="100" />
+                            </DataTemplate>
+                        </forms:CarouselView.ItemTemplate>
+                    </forms:CarouselView>
+                    <Image x:Name="CarouselImages"/>
+                    <Label x:Name="MainLabel"/>
+                </StackLayout>
+            </local:PinchGestureHelper.Content>
+        </local:PinchGestureHelper>
     </ContentPage.Content>
 </ContentPage>

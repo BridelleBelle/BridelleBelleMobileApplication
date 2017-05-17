@@ -22,6 +22,7 @@ namespace BridelleBelleMobileApplication
 		{
 			InitializeComponent ();
 			this.Magazine = mag;
+			
 			MainCarouselView.ItemsSource = Load();
 		}
 
