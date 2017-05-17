@@ -1,11 +1,10 @@
-﻿	using System;
-	using BridelleBelleMobileApplication.Models;
-	using Xamarin.Forms;
-	using System.IO;
-	using System.Threading.Tasks;
-	using System.Collections.Generic;
-	using System.Linq;
-	using BridelleBelleMobileApplication.Types;
+﻿using System;
+using BridelleBelleMobileApplication.Models;
+using Xamarin.Forms;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
+using BridelleBelleMobileApplication.Types;
 
 namespace BridelleBelleMobileApplication
 {
@@ -44,7 +43,7 @@ namespace BridelleBelleMobileApplication
 			}
 			catch (Exception exception)
 			{
-				
+
 			}
 		}
 
