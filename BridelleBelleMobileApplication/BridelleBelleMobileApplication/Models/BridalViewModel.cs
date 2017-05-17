@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 using MvvmHelpers;
 using BridelleBelleMobileApplication.Gallery;
-using Xamarin.Froms;
+using Xamarin.Forms;
 
 namespace BridelleBelleMobileApplication.Models
 {
@@ -19,7 +19,7 @@ namespace BridelleBelleMobileApplication.Models
 
         public BridalViewModel()
         {
-
+            _images.Add(new GalleryImage { Source = ConvertImage("110-13116.jpg") });
         }
 
         public ObservableCollection<GalleryImage> Images
@@ -48,6 +48,15 @@ namespace BridelleBelleMobileApplication.Models
 
                 });
             }
+        }
+
+        public async Task<Image> ConvertImage(string fileName)
+        {
+            var bytes = Convert.FromBase64String(await App.Manager.GetCovers(fileName));
+            Stream stream = new MemoryStream(bytes);
+            var result = new Image();
+            result.Source = ImageSource.FromStream(() => { return stream; });
+            return result;
         }
     }
 }

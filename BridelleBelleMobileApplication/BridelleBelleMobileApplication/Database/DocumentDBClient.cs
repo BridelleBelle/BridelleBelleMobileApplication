@@ -9,14 +9,14 @@ using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
 namespace BridelleBelleMobileApplication.Database
 {
-	public class DocumnetDBClient
+	public class DocumentDBClient
 	{
 		DocumentClient Client;
 
 		protected static string EndPointUri = "https://bridalbelle.documents.azure.com:443/";
-		protected static string AuthKey = "AHkIGJ309oodWdWgQFzqfijv5wpQB889QvL6mZVj16HgLBu9HTxoVMuLW0XJKs1CSg6yYMNfroZXEd91VtfmPg==";
+		protected static string AuthKey = "oCGBRY0yzraBOdSNP8Myd2ocAlpw7k9Xav96BlHdKK3GUvggT3ECxX123MTCIG4wPt0rb0Oi6ElNAylaX9Ub7g==";
 
-	    public DocumnetDBClient()
+	    public DocumentDBClient()
 	    {
 	        Client = new DocumentClient(new Uri(EndPointUri), AuthKey);
 	    }

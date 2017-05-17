@@ -15,7 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)BridalView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Database\DocumnetDBClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\DocumentDBClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Database\ImageClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Gallery\GalleryImage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Gallery\IImageResize.cs" />
