@@ -16,6 +16,9 @@ namespace BridelleBelleMobileApplication
 		public MainPage()
 		{
 			InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, false);
+
 			OnStart();
 		}
 

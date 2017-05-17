@@ -27,7 +27,7 @@ namespace BridelleBelleMobileApplication
 
 		private void MainCarouselView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
-			MainLabel.Text = e.SelectedItem as string;
+			//MainLabel.Text = e.SelectedItem as string;
 		}
 
 		private List<string> Load()
