@@ -14,10 +14,9 @@ namespace BridelleBelleMobileApplication
 	public partial class PageView : ContentPage
 	{
 		private int cap = 20;
-		private int currLoad = 0;
-
 		private Magazine Magazine;
 		private List<Image> Images;
+		int currPage = 0;
 		public PageView (Magazine mag)
 		{
 			InitializeComponent ();
@@ -27,7 +26,30 @@ namespace BridelleBelleMobileApplication
 
 		private void MainCarouselView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
-			MainLabel.Text = e.SelectedItem as string;
+			var selectedItem = this.Magazine.MagazineContent.Where(m => m.Uri == e.SelectedItem.ToString()).FirstOrDefault();
+			//currPage = selectedItem.Page;
+			var advertiser = this.Magazine.Advertisers.Where(p => p.Page == selectedItem.PageNumber);
+
+			if(advertiser.Any())
+			{
+				AdsButton.IsVisible = true;
+			}
+			else
+			{
+				AdsButton.IsVisible = false;
+			}
+			MainLabel.Text = selectedItem.PageNumber.ToString();
+		}
+
+		async void ShowDialog(object sender, EventArgs e)
+		{
+			var selectedAdvertiser = this.Magazine.Advertisers.Where(p => p.Page == currPage).FirstOrDefault();
+
+			if (AdsButton.IsVisible)
+			{
+				 //await Navigation.PushModalAsync(new HandleDialog());
+
+			}
 		}
 
 		private List<string> Load()
