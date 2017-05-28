@@ -39,7 +39,7 @@ namespace BridelleBelleMobileApplication
 					}
 				}
 
-				await Navigation.PushAsync(new PageView(mags.OrderByDescending(x => x.Issue).FirstOrDefault()));
+				await Navigation.PushAsync(new MasterPageView(mags.OrderByDescending(x => x.Issue).FirstOrDefault()));
 			}
 			catch (Exception exception)
 			{
