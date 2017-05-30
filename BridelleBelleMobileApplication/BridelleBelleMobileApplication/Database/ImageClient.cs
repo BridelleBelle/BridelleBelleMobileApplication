@@ -40,6 +40,6 @@ namespace BridelleBelleMobileApplication
 			CloudBlobContainer = CloudBlobClient.GetContainerReference(imageType.ToString().ToLower());
 			var blob = CloudBlobContainer.GetBlockBlobReference(fileName);
 			return blob.Uri.AbsoluteUri;
-		}
+        }
 	}
 }

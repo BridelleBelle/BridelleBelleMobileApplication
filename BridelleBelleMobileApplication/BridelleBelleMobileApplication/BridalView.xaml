@@ -4,37 +4,45 @@
              x:Class="BridelleBelleMobileApplication.BridalView"
              xmlns:custom="clr-namespace:BridelleBelleMobileApplication.Gallery;assembly=ImageGallery"
              x:Name="BridalPage">
-    <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition
+    ContentPage.Content>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
 					Height="*">
-                </RowDefinition>
-                <RowDefinition
+            </RowDefinition>
+            <RowDefinition
 					Height="128">
-                </RowDefinition>
-            </Grid.RowDefinitions>
-            <Image
+            </RowDefinition>
+            <RowDefinition
+					Height="Auto">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Image
 				Source="{Binding PreviewImage}"
 				Grid.Row="0">
-            </Image>
-            <custom:ImageGallery
+        </Image>
+        <custom:ImageGallery
 				ItemsSource="{Binding Images}"
 				Grid.Row="1">
-                <custom:ImageGallery.ItemTemplate>
-                    <DataTemplate>
-                        <Image
+            <custom:ImageGallery.ItemTemplate>
+                <DataTemplate>
+                    <Image
 							Source="{Binding Source}"
 							Aspect="AspectFit">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
 									Command="{Binding Path=BindingContext.PreviewImageCommand, Source={x:Reference BridalPage}}"
 									CommandParameter="{Binding ImageId}" />
-                            </Image.GestureRecognizers>
-                        </Image>
-                    </DataTemplate>
-                </custom:ImageGallery.ItemTemplate>
-            </custom:ImageGallery>
-        </Grid>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </DataTemplate>
+            </custom:ImageGallery.ItemTemplate>
+        </custom:ImageGallery>
+        <Button
+				Grid.Row="2"
+				Text="Photo"
+				Command="{Binding CameraCommand}">
+        </Button>
+    </Grid>
     </ContentPage.Content>
 </ContentPage>

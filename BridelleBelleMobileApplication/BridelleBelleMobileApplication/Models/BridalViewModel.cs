@@ -7,19 +7,22 @@ using System.Windows.Input;
 
 using MvvmHelpers;
 using BridelleBelleMobileApplication.Gallery;
+using BridelleBelleMobileApplication.Types;
 using Xamarin.Forms;
 
 namespace BridelleBelleMobileApplication.Models
 {
     public class BridalViewModel : BaseViewModel
     {
+        private ImageClient Client;
         ICommand _previewImageCommand = null;
         ObservableCollection<GalleryImage> _images = new ObservableCollection<GalleryImage>();
         ImageSource _previewImage = null;
 
         public BridalViewModel()
         {
-            _images.Add(new GalleryImage { Source = ConvertImage("110-13116.jpg") });
+            
+
         }
 
         public ObservableCollection<GalleryImage> Images
@@ -50,13 +53,27 @@ namespace BridelleBelleMobileApplication.Models
             }
         }
 
-        public async Task<Image> ConvertImage(string fileName)
+        public ICommand CameraCommand
         {
-            var bytes = Convert.FromBase64String(await App.Manager.GetCovers(fileName));
+            get { return _cameraCommand ?? new Command(async () => await ExecuteCommand(), () => CanExecuteCameraCommand()); }
+        }
+
+        public bool CanExecuteCameraCommand()
+        {
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void ExecuteCommand()
+        {
+            var bytes = Convert.FromBase64String(ImageClient.GetImages(ImageType.Magazines, "110-13116.jpg"));
             Stream stream = new MemoryStream(bytes);
             var result = new Image();
             result.Source = ImageSource.FromStream(() => { return stream; });
-            return result;
+            _images.Add(new GalleryImage { Source = result.Source, OrgImage = bytes });
         }
     }
 }
