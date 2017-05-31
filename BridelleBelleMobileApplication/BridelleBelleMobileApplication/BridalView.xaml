@@ -4,7 +4,7 @@
              x:Class="BridelleBelleMobileApplication.BridalView"
              xmlns:custom="clr-namespace:BridelleBelleMobileApplication.Gallery;assembly=ImageGallery"
              x:Name="BridalPage">
-    ContentPage.Content>
+    <ContentPage.Content>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition
