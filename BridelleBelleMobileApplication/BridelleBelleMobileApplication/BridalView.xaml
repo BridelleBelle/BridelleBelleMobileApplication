@@ -38,11 +38,11 @@
                 </DataTemplate>
             </custom:ImageGallery.ItemTemplate>
         </custom:ImageGallery>
-        <Button
+        <!--<Button
 				Grid.Row="2"
 				Text="Photo"
 				Command="{Binding CameraCommand}">
-        </Button>
+        </Button>-->
     </Grid>
     </ContentPage.Content>
 </ContentPage>

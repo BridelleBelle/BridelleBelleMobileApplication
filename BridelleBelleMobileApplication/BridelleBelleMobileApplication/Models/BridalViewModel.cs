@@ -15,7 +15,7 @@ namespace BridelleBelleMobileApplication.Models
     public class BridalViewModel : BaseViewModel
     {
         private ImageClient Client;
-        ICommand _previewImageCommand = null;
+        //ICommand _previewImageCommand = null;
         ObservableCollection<GalleryImage> _images = new ObservableCollection<GalleryImage>();
         ImageSource _previewImage = null;
 
@@ -53,19 +53,19 @@ namespace BridelleBelleMobileApplication.Models
             }
         }
 
-        public ICommand CameraCommand
-        {
-            get { return _cameraCommand ?? new Command(async () => await ExecuteCommand(), () => CanExecuteCameraCommand()); }
-        }
+        //public ICommand CameraCommand
+        //{
+        //    get { return _cameraCommand ?? new Command(async () => await ExecuteCommand(), () => CanExecuteCameraCommand()); }
+        //}
 
-        public bool CanExecuteCameraCommand()
-        {
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-            {
-                return false;
-            }
-            return true;
-        }
+        //public bool CanExecuteCameraCommand()
+        //{
+        //    if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+        //    {
+        //        return false;
+        //    }
+        //    return true;
+        //}
 
         public void ExecuteCommand()
         {
