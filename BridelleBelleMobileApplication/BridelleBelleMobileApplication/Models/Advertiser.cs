@@ -19,5 +19,9 @@ namespace BridelleBelleMobileApplication.Models
 		public Address Address;
 		[JsonProperty("socialMedia")]
 		public IEnumerable<SocialMedia> SocialMedia;
+		[JsonProperty("imageFileName")]
+		public string ImageFileName;
+		[JsonProperty("information")]
+		public string AdvertiserInformation;
 	}
 }

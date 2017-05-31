@@ -51,8 +51,8 @@
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.231\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Azure.DocumentDB.Core, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Azure.DocumentDB.Core.1.2.2\lib\netstandard1.6\Microsoft.Azure.DocumentDB.Core.dll</HintPath>
+    <Reference Include="Microsoft.Azure.DocumentDB.Core, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.DocumentDB.Core.1.3.1\lib\netstandard1.6\Microsoft.Azure.DocumentDB.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -145,6 +145,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\cover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\facebookicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\twittericon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\instagramicon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\mapsicon.png" />
   </ItemGroup>
   <Import Project="..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems" Label="Shared" Condition="Exists('..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

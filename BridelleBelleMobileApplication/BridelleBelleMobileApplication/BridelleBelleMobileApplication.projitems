@@ -14,10 +14,14 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Database\DocumnetDBClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Database\ImageClient.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)HandleController.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ImageHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MagazineManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Database\Keys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\HandleController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ImageHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MagazineManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AdvertiserInformation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Address.cs" />
@@ -27,7 +31,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\MagazineContent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SocialMedia.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Voucher.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)PageView.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Types\HandleTypes.cs" />
@@ -35,7 +39,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Types\MagazineVersion.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -45,7 +49,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PageView.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\PageView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AdvertiserInformation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

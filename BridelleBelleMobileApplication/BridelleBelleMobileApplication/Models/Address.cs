@@ -10,6 +10,8 @@ namespace BridelleBelleMobileApplication.Models
 		public string Street;
 		[JsonProperty("no")]
 		public int No;
+		[JsonProperty("postcode")]
+		public string Postcode;
 		[JsonProperty("geolocation")]
 		public double [] GeoLocation = new double[2];
 		[JsonProperty("county")]

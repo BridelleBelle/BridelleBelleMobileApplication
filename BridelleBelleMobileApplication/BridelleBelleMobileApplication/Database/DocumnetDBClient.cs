@@ -13,12 +13,9 @@ namespace BridelleBelleMobileApplication.Database
 	{
 		DocumentClient Client;
 
-		protected static string EndPointUri = "https://bridalbelle.documents.azure.com:443/";
-		protected static string AuthKey = "V3FfSnycMuW3Fk8DK6Z1xbtqRewu5hY9aEqstfPhecvwHSVahGvgGuvOaZwnLmw0xoGZo4KM4b6RAUgSujGrZg==";
-
 		public DocumnetDBClient()
 		{
-			Client = new DocumentClient(new Uri(EndPointUri), AuthKey);
+			Client = new DocumentClient(new Uri(Keys.DocumentDbEndPointUri), Keys.DocumentDbAuthKey);
 		}
 
 	    public async Task CreateDatabase()

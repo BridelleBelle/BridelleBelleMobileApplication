@@ -7,7 +7,7 @@ using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Types;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using BridelleBelleMobileApplication.Views;
 namespace BridelleBelleMobileApplication
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -18,16 +18,34 @@ namespace BridelleBelleMobileApplication
 
 		private Magazine Magazine;
 		private List<Image> Images;
-		public PageView (Magazine mag)
+		private int currPage = 0;
+
+		public PageView(Magazine mag)
 		{
-			InitializeComponent ();
-			this.Magazine = mag;
-			MainCarouselView.ItemsSource = Load();
+			InitializeComponent();
+			if (mag != null)
+			{
+
+				this.Magazine = mag;
+				MainCarouselView.ItemsSource = Load();
+			}
 		}
 
 		private void MainCarouselView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
 			MainLabel.Text = e.SelectedItem as string;
+			var selectedItem = this.Magazine.MagazineContent.Where(m => m.Uri == e.SelectedItem.ToString()).FirstOrDefault();
+			currPage = selectedItem.PageNumber;
+			var advertiser = this.Magazine.Advertisers.Where(p => p.Page == selectedItem.PageNumber);
+
+			if (advertiser.Any())
+			{
+				AdsButton.IsVisible = true;
+			}
+			else
+			{
+				AdsButton.IsVisible = false;
+			}
 		}
 
 		private List<string> Load()
@@ -42,6 +60,14 @@ namespace BridelleBelleMobileApplication
 			}
 
 			return images;
+		}
+
+		async void ShowAdvertiserDetails(object sender, EventArgs e)
+		{
+			if (AdsButton.IsVisible)
+			{
+				await Navigation.PushAsync(new AdvertiserInformation(this.Magazine.Advertisers.Where(p => p.Page == currPage).FirstOrDefault()));
+			}
 		}
 	}
 }

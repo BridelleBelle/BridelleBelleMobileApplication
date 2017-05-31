@@ -4,7 +4,7 @@ namespace BridelleBelleMobileApplication.Models
 {
 	public class MagazineContent
 	{
-		[JsonProperty("pageNumer")]
+		[JsonProperty("pageNumber")]
 		public int PageNumber;
 		[JsonProperty("pageImage")]
 		public byte[] PageImage;

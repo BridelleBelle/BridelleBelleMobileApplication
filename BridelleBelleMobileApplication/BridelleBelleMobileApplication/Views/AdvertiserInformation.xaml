@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BridelleBelleMobileApplication.Views.AdvertiserInformation">
+
+    <StackLayout>
+        <Label x:Name="advertiserLabel" Text="{Binding advertiserInformation}" FontSize="36"></Label>
+        <Label x:Name="advertiserInformation" Text="{Binding advertiserInformation}"></Label>
+        <Image x:Name="advertiserImage" Source="{Binding advertiserImage}" Aspect="Fill" HeightRequest="200"></Image>
+
+            <Image x:Name="FacebookIcon"   Source="facebookicon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
+            <Image x:Name="TwitterIcon"  Source="twittericon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
+            <Image x:Name="InstagramIcon"  Source="instagramicon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
+            <Image x:Name="MapsIcon" Source="mapsicon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
+        
+        <Label x:Name="address"></Label>
+        
+        <Label x:Name="telephone"></Label>
+        <Label x:Name="website"></Label>
+        <Label x:Name="email"></Label>
+        <Button Text="Offers"></Button>
+    </StackLayout>
+</ContentPage>

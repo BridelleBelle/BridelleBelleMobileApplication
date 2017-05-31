@@ -19,6 +19,6 @@
 
     <Image x:Name="CarouselImages"/>
     <Label x:Name="MainLabel"/>
-
+        <Button x:Name="AdsButton"  Clicked="ShowAdvertiserDetails" Text="Advertiser Information"></Button>
     </StackLayout>
 </ContentPage>
