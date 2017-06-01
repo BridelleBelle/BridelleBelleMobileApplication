@@ -14,8 +14,8 @@ namespace BridelleBelleMobileApplication.Models
 {
     public class BridalViewModel : BaseViewModel
     {
-        private ImageClient Client;
-        //ICommand _previewImageCommand = null;
+        //private ImageClient Client;
+        ICommand _previewImageCommand = null;
         ObservableCollection<GalleryImage> _images = new ObservableCollection<GalleryImage>();
         ImageSource _previewImage = null;
 
