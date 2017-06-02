@@ -17,8 +17,9 @@ namespace BridelleBelleMobileApplication
 			InitializeComponent();
 
 			MainPage = new NavigationPage(new MainPage());
-            Manager = new MagazineManager();
-
+			Manager = new MagazineManager();
+			this.Master = new SignInPage();
+			this.Detail = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart ()
