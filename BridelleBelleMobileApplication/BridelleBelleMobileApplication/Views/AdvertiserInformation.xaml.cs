@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Types;
+using BridelleBelleMobileApplication.Helpers;
 
 namespace BridelleBelleMobileApplication.Views
 {
@@ -16,7 +17,7 @@ namespace BridelleBelleMobileApplication.Views
 	public partial class AdvertiserInformation : ContentPage
 	{
 		MagazineAdvertiser Advertiser;
-		HandleController HandleController;
+		HandlesController HandleController;
 
 		string facebookHandle = String.Empty;
 		string twitterHandle = String.Empty;
@@ -27,7 +28,7 @@ namespace BridelleBelleMobileApplication.Views
 		{
 			InitializeComponent ();
 			this.Advertiser = advertiser;
-			this.HandleController = new HandleController();
+			this.HandleController = new HandlesController();
 			advertiserLabel.Text = advertiser.Advertiser.Name;
 			advertiserInformation.Text = advertiser.Advertiser.AdvertiserInformation;
 
@@ -130,7 +131,7 @@ namespace BridelleBelleMobileApplication.Views
 			if (InstagramIcon.IsVisible)
 			{
 				tapInsta.Tapped += Insta_Tapped;
-				MapsIcon.GestureRecognizers.Add(tapInsta);
+				InstagramIcon.GestureRecognizers.Add(tapInsta);
 			}
 		}
 
@@ -141,8 +142,6 @@ namespace BridelleBelleMobileApplication.Views
 			email.Text = advertiser.Advertiser.Email;
 
 			address.Text = !String.IsNullOrEmpty(googleAddress) ? googleAddress + " " + advertiser.Advertiser.Address.Postcode : String.Empty;
-
-			
 		}
 	}
 }

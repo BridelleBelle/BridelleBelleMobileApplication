@@ -69,6 +69,15 @@
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Rg.Plugins.Popup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\MonoAndroid\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\MonoAndroid\Rg.Plugins.Popup.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\MonoAndroid\Rg.Plugins.Popup.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
@@ -150,13 +159,13 @@
     <AndroidResource Include="Resources\Drawable\facebookicon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\twittericon.png" />
+    <AndroidResource Include="Resources\Drawable\mapsicon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\instagramicon.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\mapsicon.png" />
+    <AndroidResource Include="Resources\Drawable\twittericon.png" />
   </ItemGroup>
   <Import Project="..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems" Label="Shared" Condition="Exists('..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -15,9 +15,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Database\DocumnetDBClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Database\ImageClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Database\Keys.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\HandleController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\HandlesController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ImageHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MagazineManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AdvertiserChoicePopup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\AdvertiserInformation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,10 +57,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AdvertiserInformation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AdvertiserInformation.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AdvertiserChoicePopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

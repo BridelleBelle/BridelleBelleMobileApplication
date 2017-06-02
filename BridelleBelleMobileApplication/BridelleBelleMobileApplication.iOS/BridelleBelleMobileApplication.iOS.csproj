@@ -132,6 +132,15 @@
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Rg.Plugins.Popup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\Xamarin.IOS\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.IOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\Xamarin.IOS\Rg.Plugins.Popup.IOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\Xamarin.IOS\Rg.Plugins.Popup.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
@@ -160,6 +169,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\bb_logo.png" />
+    <BundleResource Include="Resources\facebookicon.png" />
+    <BundleResource Include="Resources\instagramicon.jpg" />
+    <BundleResource Include="Resources\mapsicon.jpg" />
+    <BundleResource Include="Resources\twittericon.png" />
   </ItemGroup>
   <Import Project="..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems" Label="Shared" Condition="Exists('..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

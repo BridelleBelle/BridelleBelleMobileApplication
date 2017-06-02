@@ -8,6 +8,9 @@ using BridelleBelleMobileApplication.Types;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BridelleBelleMobileApplication.Views;
+using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Pages;
+
 namespace BridelleBelleMobileApplication
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -33,7 +36,7 @@ namespace BridelleBelleMobileApplication
 
 		private void MainCarouselView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
-			MainLabel.Text = e.SelectedItem as string;
+			MainLabel.Text = currPage + "/" + this.Magazine.Pages;
 			var selectedItem = this.Magazine.MagazineContent.Where(m => m.Uri == e.SelectedItem.ToString()).FirstOrDefault();
 			currPage = selectedItem.PageNumber;
 			var advertiser = this.Magazine.Advertisers.Where(p => p.Page == selectedItem.PageNumber);
@@ -64,9 +67,17 @@ namespace BridelleBelleMobileApplication
 
 		async void ShowAdvertiserDetails(object sender, EventArgs e)
 		{
+			var ads = this.Magazine.Advertisers.Where(p => p.Page == currPage);
 			if (AdsButton.IsVisible)
 			{
-				await Navigation.PushAsync(new AdvertiserInformation(this.Magazine.Advertisers.Where(p => p.Page == currPage).FirstOrDefault()));
+				if (ads.Count() > 1)
+				{
+					await Navigation.PushPopupAsync(new AdvertiserChoicePopup(ads));
+				}
+				else
+				{
+					await Navigation.PushAsync(new AdvertiserInformation(ads.ToList()[0]));
+				}
 			}
 		}
 	}
