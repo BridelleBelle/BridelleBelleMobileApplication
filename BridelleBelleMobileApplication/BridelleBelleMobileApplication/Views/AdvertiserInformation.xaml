@@ -8,16 +8,35 @@
         <Label x:Name="advertiserInformation" Text="{Binding advertiserInformation}"></Label>
         <Image x:Name="advertiserImage" Source="{Binding advertiserImage}" Aspect="Fill" HeightRequest="200"></Image>
 
-            <Image x:Name="FacebookIcon"   Source="facebookicon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
-            <Image x:Name="TwitterIcon"  Source="twittericon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
-            <Image x:Name="InstagramIcon"  Source="instagramicon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
-            <Image x:Name="MapsIcon" Source="mapsicon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
-        
-        <Label x:Name="address"></Label>
-        
-        <Label x:Name="telephone"></Label>
-        <Label x:Name="website"></Label>
-        <Label x:Name="email"></Label>
-        <Button Text="Offers"></Button>
+
+        <Grid Padding="10" ColumnSpacing="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="FacebookIcon" Grid.Row="1" Source="facebookicon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
+            <Image x:Name="TwitterIcon" Grid.Row="2" Source="twittericon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
+            <Image x:Name="InstagramIcon" Grid.Row="1" Grid.Column="1" Source="instagramicon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
+            <Image x:Name="MapsIcon" Grid.Row="2" Grid.Column="1" Source="mapsicon.png" IsVisible="false" HeightRequest="40" WidthRequest="40"></Image>
+        </Grid>
+        <Grid Padding="10" ColumnSpacing="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="website" Grid.Row="1" Grid.Column="1"></Label>
+            <Label x:Name="email" Grid.Row="1" ></Label>
+            <Label x:Name="address" Grid.Row="2" Grid.Column="1"></Label>
+            <Label x:Name="telephone" Grid.Row="2"></Label>
+        </Grid>
+        <Button BackgroundColor="Blue" TextColor="White" Text="Offers"></Button>
     </StackLayout>
 </ContentPage>
