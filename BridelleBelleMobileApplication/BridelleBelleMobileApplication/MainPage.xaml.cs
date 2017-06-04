@@ -16,7 +16,7 @@ namespace BridelleBelleMobileApplication
 		public MainPage()
 		{
 			InitializeComponent();
-			OnStart();
+            OnStart();
 		}
 
 		void OnStart()
