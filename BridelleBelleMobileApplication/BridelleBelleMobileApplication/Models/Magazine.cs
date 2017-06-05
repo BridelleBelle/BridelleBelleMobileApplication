@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BridelleBelleMobileApplication.Types;
+using Xamarin.Forms;
 using Newtonsoft.Json;
 
 namespace BridelleBelleMobileApplication.Models
@@ -23,7 +24,7 @@ namespace BridelleBelleMobileApplication.Models
 		[JsonProperty("coverImageFileName")]
 		public string CoverImageFileName;
 		[JsonProperty("coverImage")]
-		public byte[] CoverImage;
+		public Image CoverImage;
 
 		[JsonProperty("advertisers")]
 		public IEnumerable<MagazineAdvertiser> Advertisers;

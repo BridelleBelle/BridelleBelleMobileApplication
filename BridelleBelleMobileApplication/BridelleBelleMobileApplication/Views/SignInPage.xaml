@@ -9,5 +9,7 @@ Icon="portrait_icon.png" >
        <Entry x:Name="usernameTxt" Grid.Row="1" Grid.Column="1" Placeholder="username"/>
         <Entry x:Name="passwordTxt" Grid.Row="1"  IsPassword="True" Placeholder="password"/>
         <Button x:Name="loginBtn"  Grid.Row="2" Grid.Column="1" Text="Login" Clicked="Login"></Button>
+        <Button x:Name="registerBtn"  Grid.Row="2" Grid.Column="1" Text="Register"></Button>
+
     </StackLayout>
 </ContentPage>
