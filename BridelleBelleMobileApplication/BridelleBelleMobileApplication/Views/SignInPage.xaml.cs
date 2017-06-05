@@ -18,6 +18,7 @@ namespace BridelleBelleMobileApplication
 		public SignInPage ()
 		{
 			InitializeComponent ();
+			UpdateUI();
 		}
 
 		public async void Login(object sender,EventArgs e)
@@ -44,7 +45,6 @@ namespace BridelleBelleMobileApplication
 		public async void Register(object sender,EventArgs e)
 		{
 			await Navigation.PushPopupAsync(new RegisterUser());
-			UpdateUI();
 		}
 
 		public async void Logout(object sender, EventArgs e)
