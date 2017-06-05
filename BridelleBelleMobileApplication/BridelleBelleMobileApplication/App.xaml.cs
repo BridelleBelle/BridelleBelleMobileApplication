@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using BridelleBelleMobileApplication.Database;
 using BridelleBelleMobileApplication.Models;
+using BridelleBelleMobileApplication.Views;
 using Xamarin.Forms;
 
 namespace BridelleBelleMobileApplication
@@ -12,14 +13,13 @@ namespace BridelleBelleMobileApplication
 	{
 	    public static List<Magazine> Magazines;
 	    public static MagazineManager Manager;
+		public static Models.User SignedInUser;
 		public App ()
 		{
 			InitializeComponent();
-
-			MainPage = new NavigationPage(new MainPage());
+			MainPage = new NavigationPage(new HomePage());
+			//MainPage = new Master();
 			Manager = new MagazineManager();
-			this.Master = new SignInPage();
-			this.Detail = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart ()

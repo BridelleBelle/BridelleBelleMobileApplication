@@ -83,8 +83,21 @@ namespace BridelleBelleMobileApplication.Database
 
 		public async Task<Magazine> Get(string id)
 		{
-			var response = await Client.ReadDocumentAsync(UriFactory.CreateDocumentUri("bridalbelle", "magazines", "4"));
+			var response = await Client.ReadDocumentAsync(UriFactory.CreateDocumentUri("bridalbelle", "magazines", id));
 			return (Magazine) (dynamic) response.Resource;
+		}
+
+		public Models.User GetUser(string username, string password)
+		{
+			string sql = "SELECT c.id, c.username, c.magazines from c where c.username = '" + username + "' AND c.password = '" + password + "'";
+			var users = new List<Models.User>();
+			foreach (var user in Client.CreateDocumentQuery<Models.User>(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), sql))
+			{
+				users.Add(user);
+			}
+
+			return users[0];
+
 		}
 	}
 }

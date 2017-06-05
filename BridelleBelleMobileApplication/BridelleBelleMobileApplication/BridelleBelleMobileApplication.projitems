@@ -18,10 +18,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\HandlesController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ImageHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MagazineManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UserManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\DocumentDBCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AdvertiserChoicePopup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\AdvertiserInformation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPage.xaml.cs">
@@ -41,6 +47,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Types\ImageType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types\MagazineVersion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\SignInPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\UserMagazines.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -71,6 +80,16 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\SignInPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\UserMagazines.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
