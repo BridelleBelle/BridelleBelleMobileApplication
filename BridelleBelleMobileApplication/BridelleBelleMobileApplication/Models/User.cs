@@ -13,7 +13,6 @@ namespace BridelleBelleMobileApplication.Models
 		public string Username;
 		[JsonProperty("magazines")]
 		public IEnumerable<string> Magazines; //stores the ids
-
 		public IEnumerable<Magazine> OwnedMagazines;
 	}
 }

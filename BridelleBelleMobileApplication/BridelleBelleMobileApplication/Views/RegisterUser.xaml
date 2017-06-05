@@ -10,8 +10,8 @@
                 <StackLayout>
                     <StackLayout Orientation="Vertical">
                         <Entry x:Name="usernameTxt" Placeholder="EmailAdress"></Entry>
-                        <Entry Placeholder="Password" IsPassword="True"></Entry>
-                        <Entry x:Name="passwordTxt" Placeholder="PasswordRetry" IsPassword="True"></Entry>
+                        <Entry x:Name="passwordTxt" Placeholder="Password" IsPassword="True"></Entry>
+                        <Entry x:Name="passwordTxt2" Placeholder="PasswordRetry" IsPassword="True"></Entry>
                         <Button Text="Register" Clicked="Store"></Button>
                     </StackLayout>
                 </StackLayout>

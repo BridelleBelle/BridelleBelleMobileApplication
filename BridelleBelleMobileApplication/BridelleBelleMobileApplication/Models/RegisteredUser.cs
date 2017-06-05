@@ -10,5 +10,7 @@ namespace BridelleBelleMobileApplication.Models
 		public string Username;
 		[JsonProperty("password")]
 		public string Password;
+		[JsonProperty("id")]
+		public string Id;
 	}
 }

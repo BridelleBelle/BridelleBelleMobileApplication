@@ -9,11 +9,13 @@ using Xamarin.Forms.Xaml;
 using BridelleBelleMobileApplication.Helpers;
 using BridelleBelleMobileApplication.Types;
 using BridelleBelleMobileApplication.ViewModels;
+using BridelleBelleMobileApplication.Models;
 namespace BridelleBelleMobileApplication
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UserMagazines : ContentPage
 	{
+		MagazineViewModel Magazines;
 		public UserMagazines ()
 		{
 			InitializeComponent ();
@@ -25,16 +27,8 @@ namespace BridelleBelleMobileApplication
 			{
 				try
 				{
-					var userViewModel = SetupViewModel();
-					var images = new List<Image>();
-					var imagehelper = new ImageHelper();
-					foreach (var magazine in userViewModel.OwnedMagazines)
-					{
-						magazine.Magazine.CoverImage = await imagehelper.GetImage(ImageType.CoverImages, magazine.Magazine.CoverImageFileName);
-
-					}
-
-					BindingContext = userViewModel;
+					Magazines = SetupViewModel();
+					magazines.ItemsSource = GetCovers(this.Magazines);
 				}
 				catch(Exception exception)
 				{
@@ -43,19 +37,47 @@ namespace BridelleBelleMobileApplication
 			}
 		}
 
-		public UserViewModel SetupViewModel()
+		public MagazineViewModel SetupViewModel()
 		{
-			var magazines = new List<MagazineViewModel>();
+			var magazines = new List<Magazine>();
 
 			foreach(var m in App.SignedInUser.OwnedMagazines)
 			{
-				magazines.Add(new MagazineViewModel { Magazine = m });
+				magazines.Add(m);
 			}
-			return new UserViewModel()
+			return new MagazineViewModel()
 			{
-				Username = App.SignedInUser.Username,
-				OwnedMagazines = magazines
+				Magazines = magazines
 			};
+		}
+
+		public List<string> GetCovers(MagazineViewModel mag)
+		{
+			var imageHelper = new ImageHelper();
+			List<string> uris = new List<string>();
+			foreach(var m in mag.Magazines)
+			{
+				var uri = imageHelper.GetImageUri(ImageType.CoverImages,m.CoverImageFileName);
+				uris.Add(uri);
+				m.CoverImageUri = uri;
+			}
+
+			return uris;
+		}
+
+		private async void OpenMagazine(object sender, SelectedItemChangedEventArgs e)
+		{
+			var magazine = new Magazine();
+
+			foreach(var mag in this.Magazines.Magazines)
+			{
+				if(mag.CoverImageUri == e.SelectedItem.ToString())
+				{
+					magazine = mag;
+				}
+			}
+
+			await Navigation.PushAsync(new PageView(magazine));
 		}
 	}
 }

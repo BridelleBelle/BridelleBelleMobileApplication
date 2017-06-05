@@ -3,13 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BridelleBelleMobileApplication"
              x:Class="BridelleBelleMobileApplication.UserMagazines"
-             xmlns:ViewModels="using:BridelleBelleMobileApplication.ViewModels.MagazineViewModel"
              Icon="collection_icon.png">
-    <ListView x:Name="ListViewUser" HeightRequest="400"  >
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="10">
+            <Label Text="My Magazines"></Label>
+            <ListView x:Name="magazines" ItemSelected="OpenMagazine"  HeightRequest="400" >
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell  Text="{Binding Name}"/>
+              <ImageCell ImageSource="{Binding .}"></ImageCell> 
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

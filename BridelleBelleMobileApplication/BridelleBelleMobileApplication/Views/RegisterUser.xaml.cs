@@ -21,8 +21,17 @@ namespace BridelleBelleMobileApplication.Views
 
 		public async void Store(object sender, EventArgs e)
 		{
-			var userManager = new UserManager();
-			await userManager.CreateUser(usernameTxt.Text, passwordTxt.Text);
+			if (!String.IsNullOrEmpty(usernameTxt.Text) || !String.IsNullOrEmpty(passwordTxt.Text) || !String.IsNullOrEmpty(passwordTxt2.Text))
+			{
+				if(passwordTxt.Text == passwordTxt2.Text)
+				{
+					var userManager = new UserManager();
+					var passwordHash = new PasswordHash();
+					await userManager.CreateUser(usernameTxt.Text, passwordHash.Encode(passwordTxt.Text));
+					App.SignedInUser = await userManager.GetUser(usernameTxt.Text, passwordTxt.Text);
+					await Navigation.PopAllPopupAsync();
+				}
+			}
 		}
 	}
 }

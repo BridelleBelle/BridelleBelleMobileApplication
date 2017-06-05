@@ -87,22 +87,46 @@ namespace BridelleBelleMobileApplication.Database
 			return (Magazine) (dynamic) response.Resource;
 		}
 
-		public Models.User GetUser(string username, string password)
+		public async Task<Models.User> GetUser(string username, string password)
 		{
-			string sql = "SELECT c.id, c.username, c.magazines from c where c.username = '" + username + "' AND c.password = '" + password + "'";
-			var users = new List<Models.User>();
-			foreach (var user in Client.CreateDocumentQuery<Models.User>(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), sql))
+
+			string sql = "SELECT c.id, c.username, c.password from c where c.username = '" + username + "'";
+			var users = new List<Models.RegisteredUser>();
+			foreach (var user in Client.CreateDocumentQuery<Models.RegisteredUser>(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), sql))
 			{
 				users.Add(user);
 			}
 
-			return users[0];
+			if (users[0].Username == username && DecodeFromBase64(users[0].Password) == password)
+			{
+				try
+				{
+					var response = await Client.ReadDocumentAsync(UriFactory.CreateDocumentUri("bellebridal", "users2", users[0].Id));
+					return (Models.User)(dynamic)response.Resource;
 
+				}
+				catch (Exception ex)
+				{
+					return null;
+				}
+
+			}
+			else
+			{
+				return null;
+			}
 		}
 
 		public async Task AddUser(RegisteredUser user)
 		{
 			await Client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), user);
 		}
+
+		private string DecodeFromBase64(string data) //decode passwords for when we need to match passwords
+		{
+			var encodeDataAsBytes = System.Convert.FromBase64String(data);
+			return System.Text.ASCIIEncoding.ASCII.GetString(encodeDataAsBytes);
+		}
+
 	}
 }

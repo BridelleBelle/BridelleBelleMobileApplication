@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\HandlesController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ImageHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MagazineManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PasswordHash.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\UserManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RegisteredUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\RegisterUser.xaml.cs">

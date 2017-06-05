@@ -27,10 +27,10 @@ namespace BridelleBelleMobileApplication
 			return ConvertByteToImage(Convert.FromBase64String(await client.GetImages(ImageType.Magazines, fileName)));
 		}
 
-		public async Task<Image> GetImage(ImageType type, string fileName)
+		public string GetImageUri(ImageType type, string fileName)
 		{
 			client = new ImageClient();
-			return ConvertByteToImage(Convert.FromBase64String(await client.GetImages(type, fileName)));
+			return client.GetImageUris(type, fileName);
 		}
 
 		public Image ConvertByteToImage(byte[]bytes)

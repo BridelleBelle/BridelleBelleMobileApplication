@@ -15,9 +15,9 @@ namespace BridelleBelleMobileApplication.Helpers
 			Client = new DocumnetDBClient();
 		}
 
-		public Models.User GetUser(string username, string password)
+		public async Task< Models.User> GetUser(string username, string password)
 		{
-			return Client.GetUser(username, password);
+			return await Client.GetUser(username, password);
 		}
 
 		public async Task CreateUser(string email,string password)
