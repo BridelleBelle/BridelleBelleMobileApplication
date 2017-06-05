@@ -167,6 +167,15 @@
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\twittericon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\collection_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\dashboard_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\portrait_icon.png" />
+  </ItemGroup>
   <Import Project="..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems" Label="Shared" Condition="Exists('..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
