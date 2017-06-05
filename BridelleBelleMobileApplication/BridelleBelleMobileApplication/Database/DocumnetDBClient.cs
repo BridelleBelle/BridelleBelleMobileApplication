@@ -99,5 +99,10 @@ namespace BridelleBelleMobileApplication.Database
 			return users[0];
 
 		}
+
+		public async Task AddUser(RegisteredUser user)
+		{
+			await Client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), user);
+		}
 	}
 }
