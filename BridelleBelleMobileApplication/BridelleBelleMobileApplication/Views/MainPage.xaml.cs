@@ -60,12 +60,6 @@ namespace BridelleBelleMobileApplication
 					App.Magazines = App.Manager.GetLatest();
 					await GetCovers();
 				}
-
-				if (App.SignedInUser != null)
-				{
-					test.IsVisible = true;
-				}
-
 			}
 			catch (Exception e)
 			{
