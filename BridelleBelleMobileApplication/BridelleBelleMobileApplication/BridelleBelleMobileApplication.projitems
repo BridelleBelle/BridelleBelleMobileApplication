@@ -21,12 +21,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PasswordHash.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\UserManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RegisteredUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MagazineViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\RegisterUser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Types\DocumentDBCollection.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MagazineViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AdvertiserChoicePopup.xaml.cs">
       <SubType>Code</SubType>
