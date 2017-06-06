@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using BridelleBelleMobileApplication.Types;
-//using BridelleBelleMobileApplication.Views;
+using BridelleBelleMobileApplication.Views;
+using BridelleBelleMobileApplication.Helpers;
 
 namespace BridelleBelleMobileApplication
 {
@@ -17,6 +18,7 @@ namespace BridelleBelleMobileApplication
 		{
 			InitializeComponent();
 			OnStart();
+			
 		}
 
 		void OnStart()
@@ -53,8 +55,11 @@ namespace BridelleBelleMobileApplication
 			base.OnAppearing();
 			try
 			{
-				App.Magazines = App.Manager.GetLatest();
-				await GetCovers();
+				if (App.Magazines == null)
+				{
+					App.Magazines = App.Manager.GetLatest();
+					await GetCovers();
+				}
 			}
 			catch (Exception e)
 			{
@@ -92,6 +97,11 @@ namespace BridelleBelleMobileApplication
 				var img = await imageHelper.ConvertImage(App.Magazines.ToList()[index].CoverImageFileName);
 				img2.Source = img.Source;
 			}
+		}
+
+		public async void LoginPage(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new SignInPage());
 		}
 	}
 }

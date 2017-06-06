@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ xmlns:local="clr-namespace:BridelleBelleMobileApplication"
+x:Class="BridelleBelleMobileApplication.SignInPage"
+Icon="portrait_icon.png">
+    <StackLayout>
+       <Entry x:Name="usernameTxt" Grid.Row="1" Grid.Column="1" Placeholder="username"/>
+        <Entry x:Name="passwordTxt" Grid.Row="1"  IsPassword="True" Placeholder="password"/>
+        <Button x:Name="loginBtn"  Grid.Row="2" Grid.Column="1" Text="Login" Clicked="Login"></Button>
+        <Button x:Name="registerBtn"  Grid.Row="2" Grid.Column="1" Text="Register" Clicked="Register"></Button>
+        <Button x:Name="logout"  Grid.Row="2" Grid.Column="1" Text="logout" Clicked="Logout"></Button>
+
+    </StackLayout>
+</ContentPage>

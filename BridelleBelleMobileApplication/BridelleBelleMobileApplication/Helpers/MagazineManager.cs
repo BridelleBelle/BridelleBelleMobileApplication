@@ -26,6 +26,18 @@ namespace BridelleBelleMobileApplication
 			return docDb.GetLatest();
 		}
 
+		public async Task<List<Magazine>> GetMagazines(List<string> ids)
+		{
+			var magazines = new List<Magazine>();
+
+			foreach(var id in ids)
+			{
+				magazines.Add(await docDb.Get(id));
+			}
+
+			return magazines;
+		}
+
 		public IEnumerable<MagazineContent> GetMagazinePages(IEnumerable<MagazineContent> content)
 		{
 			foreach (var mag in content)

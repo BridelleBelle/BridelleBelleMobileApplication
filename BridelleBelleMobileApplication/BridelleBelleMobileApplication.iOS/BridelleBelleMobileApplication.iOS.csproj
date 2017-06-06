@@ -173,6 +173,9 @@
     <BundleResource Include="Resources\instagramicon.jpg" />
     <BundleResource Include="Resources\mapsicon.jpg" />
     <BundleResource Include="Resources\twittericon.png" />
+    <AndroidResource Include="Resources\dashboard_icon.png" />
+    <AndroidResource Include="Resources\collection_icon.png" />
+    <AndroidResource Include="Resources\portrait_icon.png" />
   </ItemGroup>
   <Import Project="..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems" Label="Shared" Condition="Exists('..\BridelleBelleMobileApplication\BridelleBelleMobileApplication.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
