@@ -27,17 +27,6 @@ namespace BridelleBelleMobileApplication
 
 			tapImage.Tapped += tapImage_Tapped;
 			NEMag1.GestureRecognizers.Add(tapImage);
-
-	
-
-			if (App.SignedInUser == null)
-			{
-				test.IsVisible = false;
-			}
-			else if (App.SignedInUser != null)
-			{
-				test.IsVisible = true;
-			}
 		}
 
 		async void tapImage_Tapped(object sender, EventArgs e)
