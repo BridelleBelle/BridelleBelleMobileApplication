@@ -21,7 +21,6 @@ namespace BridelleBelleMobileApplication.Views
 			InitializeComponent ();
 			this.Advertisers = advertisers.ToList();
 			SetUpAdChoice(this.Advertisers);
-			//Content = options;
 		}
 
 		private void SetUpAdChoice(IEnumerable<MagazineAdvertiser> advertisers)

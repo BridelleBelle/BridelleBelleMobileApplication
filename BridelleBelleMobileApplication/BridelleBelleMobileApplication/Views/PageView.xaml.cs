@@ -3,24 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BridelleBelleMobileApplication.Models;
-using BridelleBelleMobileApplication.Types;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using BridelleBelleMobileApplication.Views;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
+
+using BridelleBelleMobileApplication.Views;
+using BridelleBelleMobileApplication.Models;
+using BridelleBelleMobileApplication.Types;
 
 namespace BridelleBelleMobileApplication
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageView : ContentPage
 	{
-		private int cap = 20;
-		private int currLoad = 0;
-
 		private Magazine Magazine;
-		private List<Image> Images;
 		private int currPage = 0;
 
 		public PageView(Magazine mag)
@@ -28,7 +25,6 @@ namespace BridelleBelleMobileApplication
 			InitializeComponent();
 			if (mag != null)
 			{
-
 				this.Magazine = mag;
 				MainCarouselView.ItemsSource = Load();
 			}

@@ -11,15 +11,13 @@ namespace BridelleBelleMobileApplication
 {
 	public partial class App : Application
 	{
-	    public static List<Magazine> Magazines;
-	    public static MagazineManager Manager;
+	    public static List<Magazine> AvailableMagazines;
 		public static Models.User SignedInUser;
+
 		public App ()
 		{
 			InitializeComponent();
 			MainPage = new NavigationPage(new HomePage());
-			//MainPage = new Master();
-			Manager = new MagazineManager();
 		}
 
 		protected override void OnStart ()

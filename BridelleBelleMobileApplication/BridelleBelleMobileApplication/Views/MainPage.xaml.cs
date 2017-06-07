@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
+
 using BridelleBelleMobileApplication.Types;
 using BridelleBelleMobileApplication.Views;
 using BridelleBelleMobileApplication.Helpers;
@@ -15,15 +16,13 @@ namespace BridelleBelleMobileApplication
 {
 	public partial class MainPage : ContentPage
 	{
-		private IEnumerable<Magazine> Magazines;
-
 		public MainPage()
 		{
 			InitializeComponent();
-			OnStart();
+			Setup();
 		}
 
-		void OnStart()
+		void Setup()
 		{
 			var tapImage = new TapGestureRecognizer();
 
@@ -36,7 +35,7 @@ namespace BridelleBelleMobileApplication
 			try
 			{
 				var mags = new List<Magazine>();
-				foreach (var mag in App.Magazines)
+				foreach (var mag in App.AvailableMagazines)
 				{
 					if (mag.Version == MagazineVersion.NorthEast)
 					{
@@ -57,7 +56,7 @@ namespace BridelleBelleMobileApplication
 			}
 			catch (Exception exception)
 			{
-
+				System.Diagnostics.Debug.WriteLine(exception.Message);
 			}
 		}
 
@@ -66,9 +65,10 @@ namespace BridelleBelleMobileApplication
 			base.OnAppearing();
 			try
 			{
-				if (App.Magazines == null)
+				if (App.AvailableMagazines == null)
 				{
-					App.Magazines = App.Manager.GetLatest();
+					var magazineManager = new MagazineManager();
+					App.AvailableMagazines = magazineManager.GetLatest();
 					await GetCovers();
 				}
 			}
@@ -82,7 +82,7 @@ namespace BridelleBelleMobileApplication
 		{
 			for(var i = 0;i< 4; i++)
 			{
-				if (App.Magazines.ToList()[i].Version == MagazineVersion.NorthEast)
+				if (App.AvailableMagazines.ToList()[i].Version == MagazineVersion.NorthEast)
 				{
 					await ValidateSource(NEMag1, NEMag2, i,MagazineVersion.NorthEast);
 				}
@@ -99,13 +99,13 @@ namespace BridelleBelleMobileApplication
 			if (img1.Source == null && img2.Source == null)
 			{
 				//get latest - can do this by date or something laters.
-				var latest = App.Magazines.OrderByDescending(m => m.Issue).FirstOrDefault(m => m.Version == version);
-				var img = await imageHelper.ConvertImage(latest.CoverImageFileName);
+				var latest = App.AvailableMagazines.OrderByDescending(m => m.Issue).FirstOrDefault(m => m.Version == version);
+				var img = await imageHelper.GetImage(ImageType.CoverImages,latest.CoverImageFileName);
 				img1.Source = img.Source;
 			}
 			else if (img1.Source != null && img2.Source == null)
 			{
-				var img = await imageHelper.ConvertImage(App.Magazines.ToList()[index].CoverImageFileName);
+				var img = await imageHelper.GetImage(ImageType.CoverImages,App.AvailableMagazines.ToList()[index].CoverImageFileName);
 				img2.Source = img.Source;
 			}
 		}

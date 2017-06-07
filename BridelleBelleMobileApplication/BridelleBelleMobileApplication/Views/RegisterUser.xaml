@@ -5,7 +5,7 @@
              x:Class="BridelleBelleMobileApplication.Views.RegisterUser">
     <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="20, 20, 20, 20">
         <StackLayout Padding="0, 10, 0, 0" BackgroundColor="#F4EDEC">
-            <Label Text="Choose an advertiser" TextColor="Black" FontSize="20" HorizontalOptions="Center"></Label>
+            <Label Text="Register" TextColor="Black" FontSize="20" HorizontalOptions="Center"></Label>
             <ScrollView>
                 <StackLayout>
                     <StackLayout Orientation="Vertical">

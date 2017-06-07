@@ -5,20 +5,18 @@
              xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
              x:Class="BridelleBelleMobileApplication.PageView">
     <StackLayout>
-    <Label Text="Carousel Images" 
+        <Label Text="Carousel Images" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
-
-    <forms:CarouselView x:Name="MainCarouselView"
+        <forms:CarouselView x:Name="MainCarouselView"
                         ItemSelected="MainCarouselView_ItemSelected">
-        <forms:CarouselView.ItemTemplate>
-            <DataTemplate>
-                <Image Source="{Binding .}"/>
-            </DataTemplate>
-        </forms:CarouselView.ItemTemplate>
-    </forms:CarouselView>
-
-    <Image x:Name="CarouselImages"/>
+            <forms:CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding .}"/>
+                </DataTemplate>
+            </forms:CarouselView.ItemTemplate>
+        </forms:CarouselView>
+        <Image x:Name="CarouselImages"/>
     <Label x:Name="MainLabel"/>
         <Button x:Name="AdsButton"  Clicked="ShowAdvertiserDetails" Text="Advertiser Information"></Button>
     </StackLayout>

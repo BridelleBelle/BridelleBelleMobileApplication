@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Database;
+
 namespace BridelleBelleMobileApplication.Helpers
 {
 	public class UserManager

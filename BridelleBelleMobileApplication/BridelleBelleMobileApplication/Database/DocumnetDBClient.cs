@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Net;
-using BridelleBelleMobileApplication.Models;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
+using BridelleBelleMobileApplication.Models;
 namespace BridelleBelleMobileApplication.Database
 {
 	public class DocumnetDBClient
@@ -127,6 +127,5 @@ namespace BridelleBelleMobileApplication.Database
 			var encodeDataAsBytes = System.Convert.FromBase64String(data);
 			return System.Text.ASCIIEncoding.ASCII.GetString(encodeDataAsBytes);
 		}
-
 	}
 }

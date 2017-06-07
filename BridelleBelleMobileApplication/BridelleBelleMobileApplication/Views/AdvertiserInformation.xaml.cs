@@ -73,12 +73,12 @@ namespace BridelleBelleMobileApplication.Views
 			try
 			{
 				var imageHelper = new ImageHelper();
-				var image = await imageHelper.GetAdImage(this.Advertiser.Advertiser.ImageFileName);
+				var image = await imageHelper.GetImage(ImageType.Magazines,this.Advertiser.Advertiser.ImageFileName);
 				advertiserImage.Source = image.Source;
 			}
 			catch(Exception ex)
 			{
-
+				System.Diagnostics.Debug.WriteLine(ex.Message);
 			}
 		}
 		private void SetUpSocialMedia(MagazineAdvertiser advertiser)
