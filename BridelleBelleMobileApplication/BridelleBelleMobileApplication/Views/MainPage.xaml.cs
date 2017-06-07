@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
+
 using BridelleBelleMobileApplication.Types;
 using BridelleBelleMobileApplication.Views;
 using BridelleBelleMobileApplication.Helpers;
@@ -20,10 +21,10 @@ namespace BridelleBelleMobileApplication
 		public MainPage()
 		{
 			InitializeComponent();
-			OnStart();
+			Setup();
 		}
 
-		void OnStart()
+		void Setup()
 		{
 			var tapImage = new TapGestureRecognizer();
 
@@ -57,7 +58,7 @@ namespace BridelleBelleMobileApplication
 			}
 			catch (Exception exception)
 			{
-
+				System.Diagnostics.Debug.WriteLine(exception.Message);
 			}
 		}
 
