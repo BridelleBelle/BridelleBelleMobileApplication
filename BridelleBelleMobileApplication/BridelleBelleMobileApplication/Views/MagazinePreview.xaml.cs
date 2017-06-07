@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
 using Rg.Plugins.Popup.Extensions;
-
 using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Helpers;
+
 namespace BridelleBelleMobileApplication.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MagazinePreview : PopupPage
 	{
-		Magazine Magazine;
+		private Magazine Magazine;
 		public MagazinePreview (Magazine mag)
 		{
 			InitializeComponent ();
@@ -44,8 +42,5 @@ namespace BridelleBelleMobileApplication.Views
 
 			return images;
 		}
-
-
-
 	}
 }
