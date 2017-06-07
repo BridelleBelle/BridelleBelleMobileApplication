@@ -17,10 +17,6 @@ namespace BridelleBelleMobileApplication.Models
 		public string Issue;
 		[JsonProperty("pages")]
 		public int Pages;
-		[JsonProperty("pdfFileName")]
-		public string PdfFileName; //shouldnt probably be a byte. just a dummy object for now
-		[JsonProperty("pdf")]
-		public byte[] PDF;
 		[JsonProperty("coverImageFileName")]
 		public string CoverImageFileName;
 		[JsonProperty("coverImage")]
