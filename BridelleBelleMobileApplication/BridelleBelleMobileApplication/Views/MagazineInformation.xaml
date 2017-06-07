@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BridelleBelleMobileApplication.Views.MagazineInformation">
+    <StackLayout>
+        <Image x:Name="cover" HeightRequest="200"></Image>
+        <Label x:Name="name" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        <Label x:Name="issue" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        <Label x:Name="version" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        <Label x:Name="price" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        <Button x:Name="preview" Text="Preview" Clicked="Preview"></Button>
+        <Button x:Name="buy" Text="Purchase"></Button>
+    </StackLayout>
+</ContentPage>

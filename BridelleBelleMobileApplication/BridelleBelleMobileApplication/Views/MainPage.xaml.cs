@@ -1,12 +1,15 @@
 ﻿using System;
-using BridelleBelleMobileApplication.Models;
-using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 using BridelleBelleMobileApplication.Types;
 using BridelleBelleMobileApplication.Views;
 using BridelleBelleMobileApplication.Helpers;
+using BridelleBelleMobileApplication.Models;
+
+using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Extensions;
 
 namespace BridelleBelleMobileApplication
 {
@@ -18,7 +21,6 @@ namespace BridelleBelleMobileApplication
 		{
 			InitializeComponent();
 			OnStart();
-			
 		}
 
 		void OnStart()
@@ -42,7 +44,16 @@ namespace BridelleBelleMobileApplication
 					}
 				}
 
-				await Navigation.PushAsync(new PageView(mags.OrderByDescending(x => x.Issue).FirstOrDefault()));
+				var selected = mags.OrderByDescending(x => x.Issue).FirstOrDefault();
+
+				if (App.SignedInUser == null || App.SignedInUser.Magazines.Contains(selected.Id))
+				{
+					await Navigation.PushPopupAsync(new MagazineViewingOptions(selected));
+				}
+				else
+				{
+					await Navigation.PushAsync(new PageView(mags.OrderByDescending(x => x.Issue).FirstOrDefault()));
+				}
 			}
 			catch (Exception exception)
 			{
