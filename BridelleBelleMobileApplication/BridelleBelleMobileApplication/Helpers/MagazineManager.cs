@@ -9,23 +9,23 @@ namespace BridelleBelleMobileApplication
 {
 	public class MagazineManager
 	{
-		private DocumnetDBClient docDb;
-		private ImageClient Client;
+		private DocumnetDBClient DocumentClient;
+		private ImageClient ImageClient;
 
 		public MagazineManager()
 		{
-			docDb = new DocumnetDBClient();
-			Client = new ImageClient();
+			DocumentClient = new DocumnetDBClient();
+			ImageClient = new ImageClient();
 		}
 
 		public List<Magazine> GetLatest()
 		{
-			return docDb.GetLatest();
+			return DocumentClient.GetLatest();
 		}
 
 		public async Task<string> GetCovers(string fileName)
 		{
-			return await Client.GetImages(ImageType.CoverImages, fileName);
+			return await ImageClient.GetImages(ImageType.CoverImages, fileName);
 		}
 
 		public async Task<List<Magazine>> GetMagazines(List<string> ids)
@@ -34,7 +34,7 @@ namespace BridelleBelleMobileApplication
 
 			foreach(var id in ids)
 			{
-				magazines.Add(await docDb.Get(id));
+				magazines.Add(await DocumentClient.Get(id));
 			}
 
 			return magazines;
@@ -44,7 +44,7 @@ namespace BridelleBelleMobileApplication
 		{
 			foreach (var mag in content)
 			{
-				mag.Uri = Client.GetImageUris(ImageType.Magazines, mag.FileName);
+				mag.Uri = ImageClient.GetImageUris(ImageType.Magazines, mag.FileName);
 			}
 
 			return content;
