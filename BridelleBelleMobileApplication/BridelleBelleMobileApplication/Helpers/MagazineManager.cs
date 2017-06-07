@@ -23,11 +23,6 @@ namespace BridelleBelleMobileApplication
 			return DocumentClient.GetLatest();
 		}
 
-		public async Task<string> GetCovers(string fileName)
-		{
-			return await ImageClient.GetImages(ImageType.CoverImages, fileName);
-		}
-
 		public async Task<List<Magazine>> GetMagazines(List<string> ids)
 		{
 			var magazines = new List<Magazine>();
