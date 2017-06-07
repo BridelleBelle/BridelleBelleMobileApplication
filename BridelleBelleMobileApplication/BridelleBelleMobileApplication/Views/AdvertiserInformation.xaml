@@ -4,10 +4,9 @@
              x:Class="BridelleBelleMobileApplication.Views.AdvertiserInformation">
 
     <StackLayout>
-        <Label x:Name="advertiserLabel" Text="{Binding advertiserInformation}" FontSize="36"></Label>
-        <Label x:Name="advertiserInformation" Text="{Binding advertiserInformation}"></Label>
-        <Image x:Name="advertiserImage" Source="{Binding advertiserImage}" Aspect="Fill" HeightRequest="200"></Image>
-
+        <Label x:Name="advertiserLabel" FontSize="36"></Label>
+        <Label x:Name="advertiserInformation"></Label>
+        <Image x:Name="advertiserImage" Aspect="Fill" HeightRequest="200"></Image>
 
         <Grid Padding="10" ColumnSpacing="10" RowSpacing="10">
             <Grid.RowDefinitions>

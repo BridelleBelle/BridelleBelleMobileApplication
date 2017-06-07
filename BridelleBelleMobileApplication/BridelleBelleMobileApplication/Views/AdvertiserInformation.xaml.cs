@@ -78,7 +78,7 @@ namespace BridelleBelleMobileApplication.Views
 			}
 			catch(Exception ex)
 			{
-
+				System.Diagnostics.Debug.WriteLine(ex.Message);
 			}
 		}
 		private void SetUpSocialMedia(MagazineAdvertiser advertiser)
