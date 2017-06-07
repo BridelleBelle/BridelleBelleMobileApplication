@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using BridelleBelleMobileApplication.Database;
 using System.Threading.Tasks;
+
+using BridelleBelleMobileApplication.Database;
 using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Types;
 
@@ -10,20 +11,21 @@ namespace BridelleBelleMobileApplication
 	{
 		private DocumnetDBClient docDb;
 		private ImageClient Client;
+
 		public MagazineManager()
 		{
 			docDb = new DocumnetDBClient();
 			Client = new ImageClient();
 		}
 
-		public async Task<string> GetCovers(string fileName)
-		{
-			return await Client.GetImages(ImageType.CoverImages, fileName);
-		}
-
 		public List<Magazine> GetLatest()
 		{
 			return docDb.GetLatest();
+		}
+
+		public async Task<string> GetCovers(string fileName)
+		{
+			return await Client.GetImages(ImageType.CoverImages, fileName);
 		}
 
 		public async Task<List<Magazine>> GetMagazines(List<string> ids)
