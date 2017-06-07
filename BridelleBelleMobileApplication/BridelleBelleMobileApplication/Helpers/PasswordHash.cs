@@ -8,9 +8,9 @@ namespace BridelleBelleMobileApplication.Helpers
 	{
 		public string Encode(string password)
 		{
-			var bytes = new UTF8Encoding().GetBytes(password);
-			var hashBytes = System.Security.Cryptography.MD5.Create().ComputeHash(bytes);
-			return Convert.ToBase64String(hashBytes);
+			var toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(password);
+			var result = System.Convert.ToBase64String(toEncodeAsBytes);
+			return result;
 		}
 	}
 }
