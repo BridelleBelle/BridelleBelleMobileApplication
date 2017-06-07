@@ -17,11 +17,7 @@ namespace BridelleBelleMobileApplication
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageView : ContentPage
 	{
-		private int cap = 20;
-		private int currLoad = 0;
-
 		private Magazine Magazine;
-		private List<Image> Images;
 		private int currPage = 0;
 
 		public PageView(Magazine mag)
@@ -29,7 +25,6 @@ namespace BridelleBelleMobileApplication
 			InitializeComponent();
 			if (mag != null)
 			{
-
 				this.Magazine = mag;
 				MainCarouselView.ItemsSource = Load();
 			}
