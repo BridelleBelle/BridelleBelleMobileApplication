@@ -100,12 +100,12 @@ namespace BridelleBelleMobileApplication
 			{
 				//get latest - can do this by date or something laters.
 				var latest = App.AvailableMagazines.OrderByDescending(m => m.Issue).FirstOrDefault(m => m.Version == version);
-				var img = await imageHelper.ConvertImage(latest.CoverImageFileName);
+				var img = await imageHelper.GetImage(ImageType.CoverImages,latest.CoverImageFileName);
 				img1.Source = img.Source;
 			}
 			else if (img1.Source != null && img2.Source == null)
 			{
-				var img = await imageHelper.ConvertImage(App.AvailableMagazines.ToList()[index].CoverImageFileName);
+				var img = await imageHelper.GetImage(ImageType.CoverImages,App.AvailableMagazines.ToList()[index].CoverImageFileName);
 				img2.Source = img.Source;
 			}
 		}

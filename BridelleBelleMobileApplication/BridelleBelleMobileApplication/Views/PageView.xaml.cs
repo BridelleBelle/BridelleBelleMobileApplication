@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BridelleBelleMobileApplication.Models;
-using BridelleBelleMobileApplication.Types;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using BridelleBelleMobileApplication.Views;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
+
+using BridelleBelleMobileApplication.Views;
+using BridelleBelleMobileApplication.Models;
+using BridelleBelleMobileApplication.Types;
 
 namespace BridelleBelleMobileApplication
 {
