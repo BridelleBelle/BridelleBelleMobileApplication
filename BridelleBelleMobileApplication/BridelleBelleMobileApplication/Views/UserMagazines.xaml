@@ -6,7 +6,7 @@
              Icon="collection_icon.png">
     <ContentPage.Content>
         <StackLayout Spacing="10" Padding="10">
-            <Label Text="My Magazines"></Label>
+            <Label x:Name="header" Text="My Magazines" IsVisible="false"></Label>
             <ListView x:Name="magazines" ItemSelected="OpenMagazine"  HeightRequest="400" >
         <ListView.ItemTemplate>
             <DataTemplate>

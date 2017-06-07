@@ -23,6 +23,8 @@ namespace BridelleBelleMobileApplication
 
 		protected override async void OnAppearing()
 		{
+			header.IsVisible = true;
+
 			if (App.SignedInUser != null)
 			{
 				try
@@ -32,8 +34,12 @@ namespace BridelleBelleMobileApplication
 				}
 				catch(Exception exception)
 				{
-
+					System.Diagnostics.Debug.WriteLine(exception.Message);
 				}
+			}
+			else
+			{
+				header.Text = "Please Sign In";
 			}
 		}
 
