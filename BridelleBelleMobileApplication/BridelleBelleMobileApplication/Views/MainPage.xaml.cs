@@ -46,7 +46,7 @@ namespace BridelleBelleMobileApplication
 
 				var selected = mags.OrderByDescending(x => x.Issue).FirstOrDefault();
 
-				if (App.SignedInUser == null || App.SignedInUser.Magazines.Contains(selected.Id))
+				if (App.SignedInUser == null || !App.SignedInUser.Magazines.Contains(selected.Id))
 				{
 					await Navigation.PushPopupAsync(new MagazineViewingOptions(selected));
 				}
