@@ -22,6 +22,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\SignInRegisterHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\UserManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RegisteredUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PayPal\Enums\CardIOLogo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PayPal\Enums\PaymentIntent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PayPal\Enums\PayPalEnvironment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PayPal\Interfaces\IPayPalManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PayPal\PayPalConfiguration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types\SignInRegisterResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MagazineViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MagazineInformation.xaml.cs">

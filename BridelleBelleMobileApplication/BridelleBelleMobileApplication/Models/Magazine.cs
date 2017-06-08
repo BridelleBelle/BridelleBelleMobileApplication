@@ -21,7 +21,8 @@ namespace BridelleBelleMobileApplication.Models
 		public string CoverImageFileName;
 		[JsonProperty("coverImage")]
 		public string CoverImageUri;
-
+		[JsonProperty("price")]
+		public double Price;
 		[JsonProperty("advertisers")]
 		public IEnumerable<MagazineAdvertiser> Advertisers;
 

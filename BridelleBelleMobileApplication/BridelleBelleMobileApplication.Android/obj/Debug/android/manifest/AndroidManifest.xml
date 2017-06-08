@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="BridelleBelleMobileApplication.Android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="1" android:versionName="1.0" package="BridelleBelleMobileApplication.Android">
   <!--suppress UsesMinSdkAttributes-->
   <uses-sdk android:minSdkVersion="15" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <application android:label="BridelleBelleMobileApplication.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon" android:debuggable="true">
     <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="BridelleBelleMobileApplication" android:theme="@style/MainTheme" android:name="md597df4e41e682fb7a8993f779c61bbf93.MainActivity">
       <intent-filter>
@@ -20,5 +25,19 @@
         <category android:name="mono.android.intent.category.SEPPUKU.BridelleBelleMobileApplication.Android" />
       </intent-filter>
     </receiver>
+    <activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+    <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+    <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+    <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+    <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity" />
+    <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity" />
+    <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity" />
+    <activity android:name="com.paypal.android.sdk.payments.PayPalProfileSharingActivity" />
+    <activity android:name="com.paypal.android.sdk.payments.ProfileSharingConsentActivity" />
+    <service android:name="com.paypal.android.sdk.payments.PayPalService" android:exported="false" />
+    <activity android:name="io.card.payment.CardIOActivity" android:configChanges="keyboardHidden|orientation" />
+    <activity android:name="io.card.payment.DataEntryActivity" />
+    <activity android:name="io.card.payment.CardIOActivity" android:configChanges="keyboardHidden|orientation" />
+    <activity android:name="io.card.payment.DataEntryActivity" />
   </application>
 </manifest>
