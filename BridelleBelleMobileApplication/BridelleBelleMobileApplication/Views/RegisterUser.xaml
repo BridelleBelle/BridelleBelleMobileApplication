@@ -9,9 +9,9 @@
             <ScrollView>
                 <StackLayout>
                     <StackLayout Orientation="Vertical">
-                        <Entry x:Name="usernameTxt" Placeholder="EmailAdress"></Entry>
+                        <Label Text="Username:"></Label><Entry x:Name="usernameTxt" Placeholder="EmailAddress"></Entry>
                         <Entry x:Name="passwordTxt" Placeholder="Password" IsPassword="True"></Entry>
-                        <Entry x:Name="passwordTxt2" Placeholder="PasswordRetry" IsPassword="True"></Entry>
+                        <Entry x:Name="passwordTxt2" Placeholder="Password Re-entry" IsPassword="True"></Entry>
                         <Button Text="Register" Clicked="Store"></Button>
                     </StackLayout>
                 </StackLayout>
