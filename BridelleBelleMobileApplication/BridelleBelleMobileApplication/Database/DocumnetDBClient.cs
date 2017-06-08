@@ -102,7 +102,7 @@ namespace BridelleBelleMobileApplication.Database
 					users.Add(user);
 				}
 
-				if (users.Count > 1)
+				if (users.Count >= 1)
 				{
 					if (users[0].Username == username && DecodeFromBase64(users[0].Password) == password)
 					{
