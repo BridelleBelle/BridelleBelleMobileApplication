@@ -9,6 +9,7 @@ using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BridelleBelleMobileApplication.Helpers;
+using BridelleBelleMobileApplication.Types;
 namespace BridelleBelleMobileApplication.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -25,11 +26,22 @@ namespace BridelleBelleMobileApplication.Views
 			{
 				if(passwordTxt.Text == passwordTxt2.Text)
 				{
-					var userManager = new UserManager();
+					var signInHelper = new SignInRegisterHelper();
 					var passwordHash = new PasswordHash();
-					await userManager.CreateUser(usernameTxt.Text, passwordHash.Encode(passwordTxt.Text));
-					App.SignedInUser = await userManager.GetUser(usernameTxt.Text, passwordTxt.Text);
-					await Navigation.PopAllPopupAsync();
+					var response = await signInHelper.RegisterUser(usernameTxt.Text, passwordHash.Encode(passwordTxt.Text));
+					if(response == SignInRegisterResponse.OK)
+					{
+						DisplayAlert("Successful", "Registeration Successful. Please sign in.", "OK");
+						await Navigation.PopAllPopupAsync();
+					}
+					else if(response == SignInRegisterResponse.UsernameUsed)
+					{
+						DisplayAlert("Username in use.", "Usename has been taken.", "OK");
+					}
+					else
+					{
+						DisplayAlert("Error", "An issue occured. Please try again.", "OK");
+					}
 				}
 			}
 		}
