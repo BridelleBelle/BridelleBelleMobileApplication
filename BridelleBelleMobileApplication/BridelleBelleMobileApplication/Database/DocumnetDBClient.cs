@@ -7,6 +7,8 @@ using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
 using BridelleBelleMobileApplication.Models;
+using BridelleBelleMobileApplication.Types;
+
 namespace BridelleBelleMobileApplication.Database
 {
 	public class DocumnetDBClient
@@ -89,7 +91,63 @@ namespace BridelleBelleMobileApplication.Database
 
 		public async Task<Models.User> GetUser(string username, string password)
 		{
+			try
+			{
 
+
+				string sql = "SELECT c.id, c.username, c.password from c where c.username = '" + username + "'";
+				var users = new List<Models.RegisteredUser>();
+				foreach (var user in Client.CreateDocumentQuery<Models.RegisteredUser>(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), sql))
+				{
+					users.Add(user);
+				}
+
+				if (users.Count > 1)
+				{
+					if (users[0].Username == username && DecodeFromBase64(users[0].Password) == password)
+					{
+
+						var response = await Client.ReadDocumentAsync(UriFactory.CreateDocumentUri("bellebridal", "users2", users[0].Id));
+						return (Models.User)(dynamic)response.Resource;
+					}
+					else
+					{
+						return null;
+					}
+				}
+				else
+				{
+					return null;
+				}
+			}
+			catch(Exception exception)
+			{
+				System.Diagnostics.Debug.WriteLine(exception.Message);
+				return null;
+			}
+		}
+
+		public async Task<SignInRegisterResponse> AddUser(RegisteredUser user)
+		{
+			try
+			{
+				await Client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), user);
+				return SignInRegisterResponse.OK;
+			}
+			catch (Exception exception)
+			{
+				return SignInRegisterResponse.Error;
+			}
+		}
+
+		private string DecodeFromBase64(string data) //decode passwords for when we need to match passwords
+		{
+			var encodeDataAsBytes = System.Convert.FromBase64String(data);
+			return System.Text.ASCIIEncoding.ASCII.GetString(encodeDataAsBytes);
+		}
+
+		public SignInRegisterResponse ValidateUsername(string username)
+		{
 			string sql = "SELECT c.id, c.username, c.password from c where c.username = '" + username + "'";
 			var users = new List<Models.RegisteredUser>();
 			foreach (var user in Client.CreateDocumentQuery<Models.RegisteredUser>(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), sql))
@@ -97,35 +155,14 @@ namespace BridelleBelleMobileApplication.Database
 				users.Add(user);
 			}
 
-			if (users[0].Username == username && DecodeFromBase64(users[0].Password) == password)
+			if (users.Count > 1)
 			{
-				try
-				{
-					var response = await Client.ReadDocumentAsync(UriFactory.CreateDocumentUri("bellebridal", "users2", users[0].Id));
-					return (Models.User)(dynamic)response.Resource;
-
-				}
-				catch (Exception ex)
-				{
-					return null;
-				}
-
+				return SignInRegisterResponse.UsernameUsed;
 			}
 			else
 			{
-				return null;
+				return SignInRegisterResponse.OK;
 			}
-		}
-
-		public async Task AddUser(RegisteredUser user)
-		{
-			await Client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), user);
-		}
-
-		private string DecodeFromBase64(string data) //decode passwords for when we need to match passwords
-		{
-			var encodeDataAsBytes = System.Convert.FromBase64String(data);
-			return System.Text.ASCIIEncoding.ASCII.GetString(encodeDataAsBytes);
 		}
 	}
 }

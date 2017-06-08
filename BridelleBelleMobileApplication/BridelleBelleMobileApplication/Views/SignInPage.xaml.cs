@@ -27,15 +27,19 @@ namespace BridelleBelleMobileApplication
 			{
 				var userDatabase = new UserManager();
 				var user = await userDatabase.GetUser(usernameTxt.Text, passwordTxt.Text);
-				if(user != null)
+				if (user != null)
 				{
-					App.SignedInUser = user; 
+					App.SignedInUser = user;
 
 					var magazineManager = new MagazineManager();
-					if(App.SignedInUser.Magazines != null)
+					if (App.SignedInUser.Magazines != null)
 					{
 						App.SignedInUser.OwnedMagazines = await magazineManager.GetMagazines(App.SignedInUser.Magazines.ToList());
 					}
+				}
+				else
+				{
+					DisplayAlert("Error", "Error signing in. Please check your username and password and try again.", "OK");
 				}
 
 				UpdateUI();
