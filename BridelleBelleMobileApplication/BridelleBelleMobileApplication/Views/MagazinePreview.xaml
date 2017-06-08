@@ -9,7 +9,6 @@
         <StackLayout BackgroundColor="#F4EDEC" HeightRequest="400">
             <Label x:Name="magazineName" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12"></Label>
             <Label x:Name="issue" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" FontSize="12"></Label>
-            <ScrollView>
                 <StackLayout Padding="0, 20, 0, 0" HeightRequest="800">
                     <StackLayout Orientation="Vertical" HeightRequest="300" Padding="0, 20, 0, 0">
                         <forms:CarouselView x:Name="MainCarouselView">
@@ -21,7 +20,6 @@
                         </forms:CarouselView>
                     </StackLayout>
                 </StackLayout>
-            </ScrollView>
         </StackLayout>
     </StackLayout>
 </pages:PopupPage>
