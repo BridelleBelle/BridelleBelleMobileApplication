@@ -132,6 +132,12 @@
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PayPal.Forms, Version=1.0.6237.23657, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PayPal.Forms.2.16.1\lib\Xamarin.iOS10\PayPal.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal.Forms.Abstractions, Version=1.0.6237.23656, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PayPal.Forms.2.16.1\lib\Xamarin.iOS10\PayPal.Forms.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Rg.Plugins.Popup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\Xamarin.IOS\Rg.Plugins.Popup.dll</HintPath>
     </Reference>
@@ -166,6 +172,9 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.PayPal.iOS, Version=1.0.6237.19441, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.PayPal.iOS.2.16.1\lib\Xamarin.iOS10\Xamarin.PayPal.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\bb_logo.png" />
