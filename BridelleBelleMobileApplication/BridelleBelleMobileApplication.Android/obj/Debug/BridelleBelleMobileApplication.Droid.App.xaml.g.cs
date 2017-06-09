@@ -11,8 +11,8 @@
 namespace BridelleBelleMobileApplication {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("F:\\GitHub\\BridelleBelleMobileApplication\\BridelleBelleMobileApplication\\BridelleB" +
-        "elleMobileApplication\\App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\danie\\Documents\\BridelleBelleMobileApplication\\BridelleBelleMobileApplic" +
+        "ation\\BridelleBelleMobileApplication\\App.xaml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
