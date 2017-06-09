@@ -35,6 +35,16 @@ namespace BridelleBelleMobileApplication
 			return Convert.ToBase64String(byteArray);
 		}
 
+		public async Task<byte[]> GetImageBytes(ImageType imageType, string fileName)
+		{
+			CloudBlobContainer = CloudBlobClient.GetContainerReference(imageType.ToString().ToLower());
+			var blob = CloudBlobContainer.GetBlockBlobReference(fileName);
+			await blob.FetchAttributesAsync();
+			var byteArray = new byte[blob.Properties.Length];
+			await blob.DownloadToByteArrayAsync(byteArray, 0);
+			return byteArray;
+		}
+
 		public string GetImageUris(ImageType imageType, string fileName)
 		{
 			CloudBlobContainer = CloudBlobClient.GetContainerReference(imageType.ToString().ToLower());
