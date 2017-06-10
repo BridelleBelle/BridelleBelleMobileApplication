@@ -4,6 +4,8 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using PayPal.Forms.Abstractions;
+using PayPal.Forms.Abstractions.Enum;
 
 namespace BridelleBelleMobileApplication.iOS
 {
@@ -24,7 +26,19 @@ namespace BridelleBelleMobileApplication.iOS
 		{
 			global::Xamarin.Forms.Forms.Init ();
 			LoadApplication (new BridelleBelleMobileApplication.App ());
-
+			CrossPayPalManager.Init(
+			new PayPalConfiguration(
+				PayPalEnvironment.NoNetwork,
+				"YOUR ID STRING"
+			)
+			{
+				AcceptCreditCards = true,
+				MerchantName = "Test Store",
+				MerchantPrivacyPolicyUri = "https://www.example.com/privacy",
+				MerchantUserAgreementUri = "https://www.example.com/legal",
+				ShippingAddressOption = ShippingAddressOption.Provided
+			}
+		);
 			return base.FinishedLaunching (app, options);
 		}
 	}
