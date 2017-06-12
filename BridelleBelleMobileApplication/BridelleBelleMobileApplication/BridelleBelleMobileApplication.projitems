@@ -19,11 +19,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ImageHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\MagazineManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PasswordHash.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PayPalPayments.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\SignInRegisterHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\UserManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RegisteredUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types\SignInRegisterResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MagazineViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CheckoutOptions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MagazineInformation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -127,6 +131,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MagazineViewingOptions.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\CheckoutOptions.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

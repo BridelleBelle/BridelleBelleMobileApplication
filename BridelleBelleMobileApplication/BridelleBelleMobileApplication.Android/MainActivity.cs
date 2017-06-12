@@ -20,14 +20,19 @@ namespace BridelleBelleMobileApplication.Droid
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 			PayPal.Forms.CrossPayPalManager.Init(
 				new PayPalConfiguration(
-					PayPalEnvironment.NoNetwork,
-					"AcRNDPqkr4qxK0XD8d0slrnAToJKZ8Q_SbxXrRSptMTt8kPO04JPX7vDscm22VfvxcCiHAVj474FG3uU"
+					PayPalEnvironment.Sandbox,
+					"AU-mQOLVcNAQmM5lIk7S1TVZrOlZwJaQriFZ0bOxKj8QK6IzNIS4ztxqYt0it4hSGD_9DL3__vN6_84a"
 				)
 				{
 					AcceptCreditCards = true,
-					MerchantName = "bellebridalapp",
+					MerchantName = "test",
 					MerchantPrivacyPolicyUri = "https://www.sandbox.paypal.com/uk/webapps/mpp/ua/upcoming-policies-full",
-					MerchantUserAgreementUri = "https://www.sandbox.paypal.com/webapps/mpp/ua/useragreement-full?locale.x=en_GB"
+					MerchantUserAgreementUri = "https://www.sandbox.paypal.com/webapps/mpp/ua/useragreement-full?locale.x=en_GB",
+					// OPTIONAL - Language: Default languege for PayPal Plug-In
+					Language = "ang",
+
+					// OPTIONAL - PhoneCountryCode: Default phone country code for PayPal Plug-In
+					PhoneCountryCode = "44",
 				}
 			);
 			LoadApplication (new BridelleBelleMobileApplication.App ());	

@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
 using Rg.Plugins.Popup.Extensions;
-
 using BridelleBelleMobileApplication.Models;
-using PayPal.Forms.Abstractions;
+using BridelleBelleMobileApplication.Helpers;
 using PayPal.Forms.Abstractions.Enum;
+
 namespace BridelleBelleMobileApplication.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -36,7 +34,8 @@ namespace BridelleBelleMobileApplication.Views
 					await Navigation.PushAsync(new MagazineInformation(this.Magazine));
 					break;
 				case "Buy":
-					await Pay();
+					ClosePage();
+					await Navigation.PushPopupAsync(new CheckoutOptions(this.Magazine));
 					break;
 				case "Preview":
 					ClosePage();
@@ -48,30 +47,6 @@ namespace BridelleBelleMobileApplication.Views
 		private async void ClosePage()
 		{
 			await Navigation.PopAllPopupAsync();
-		}
-
-		public async Task Pay()
-		{
-			try
-			{
-				var result = await PayPal.Forms.CrossPayPalManager.Current.Buy(new PayPalItem(this.Magazine.Name, new Decimal(this.Magazine.Price), "GBP"), new Decimal(0));
-				if (result.Status == PayPalStatus.Cancelled)
-				{
-					System.Diagnostics.Debug.WriteLine("Cancelled");
-				}
-				else if (result.Status == PayPalStatus.Error)
-				{
-					System.Diagnostics.Debug.WriteLine(result.ErrorMessage);
-				}
-				else if (result.Status == PayPalStatus.Successful)
-				{
-					System.Diagnostics.Debug.WriteLine(result.ServerResponse.Response.Id);
-				}
-			}
-			catch(Exception e)
-			{
-
-			}
 		}
 	}
 }
