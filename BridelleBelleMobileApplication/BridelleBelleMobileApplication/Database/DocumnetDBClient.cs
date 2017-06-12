@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Net;
+using System.Linq;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
@@ -93,8 +94,6 @@ namespace BridelleBelleMobileApplication.Database
 		{
 			try
 			{
-
-
 				string sql = "SELECT c.id, c.username, c.password from c where c.username = '" + username + "'";
 				var users = new List<Models.RegisteredUser>();
 				foreach (var user in Client.CreateDocumentQuery<Models.RegisteredUser>(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), sql))
@@ -162,6 +161,29 @@ namespace BridelleBelleMobileApplication.Database
 			else
 			{
 				return SignInRegisterResponse.OK;
+			}
+		}
+
+		public async Task AddMagazineToInventory(string magId)
+		{
+			try
+			{
+				var user = App.SignedInUser;
+
+				if (user.Magazines == null)
+				{
+					user.Magazines = new List<string>();
+				}
+
+				var magazines = user.Magazines.ToList();
+				magazines.Add(magId);
+				user.Magazines = magazines;
+
+				await Client.UpsertDocumentAsync(UriFactory.CreateDocumentCollectionUri("bellebridal", "users2"), user);
+			}
+			catch(Exception exception)
+			{
+
 			}
 		}
 	}

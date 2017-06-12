@@ -44,5 +44,10 @@ namespace BridelleBelleMobileApplication
 
 			return content;
 		}
+
+		public async Task AddMagazineToUserInventory(string magId)
+		{
+			await DocumentClient.AddMagazineToInventory(magId);
+		}
 	}
 }
