@@ -60,10 +60,4 @@ namespace BridelleBelleMobileApplication.Views
 			}
 		}
 	}
-
-	public enum PaymentOptions
-	{
-		PayPal,
-		Voucher
-	}
 }
