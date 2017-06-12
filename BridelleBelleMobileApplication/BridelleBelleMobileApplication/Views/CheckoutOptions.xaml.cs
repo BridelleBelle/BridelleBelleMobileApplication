@@ -41,26 +41,23 @@ namespace BridelleBelleMobileApplication.Views
 
 		public async Task Pay()
 		{
-			//if (this.Magazine.Price > 0.0)
-			//{
-				var payPalPayment = new PayPalPayments();
-				var result = await payPalPayment.Pay(this.Magazine);
+			var payPalPayment = new PayPalPayments();
+			var result = await payPalPayment.Pay(this.Magazine);
 
-				switch (result)
-				{
-					case PayPalStatus.Successful:
-						DisplayAlert("Payment Successful", "Payment was successful. " + this.Magazine.Name + " was added to your inventory and is now fully viewable.", "OK");
-						await Navigation.PopAllPopupAsync();
-						break;
-					case PayPalStatus.Error:
-						DisplayAlert("Payment Error", "Error during payment. Please check your credentials.", "OK");
-						await Navigation.PopAllPopupAsync();
-						break;
-					case PayPalStatus.Cancelled:
-						DisplayAlert("Payment Cancelled", "Payment was cancelled.", "OK");
-						break;
-				}
-			//}
+			switch (result)
+			{
+				case PayPalStatus.Successful:
+					DisplayAlert("Payment Successful", "Payment was successful. " + this.Magazine.Name + " was added to your inventory and is now fully viewable.", "OK");
+					await Navigation.PopAllPopupAsync();
+					break;
+				case PayPalStatus.Error:
+					DisplayAlert("Payment Error", "Error during payment. Please check your credentials.", "OK");
+					await Navigation.PopAllPopupAsync();
+					break;
+				case PayPalStatus.Cancelled:
+					DisplayAlert("Payment Cancelled", "Payment was cancelled.", "OK");
+					break;
+			}
 		}
 	}
 

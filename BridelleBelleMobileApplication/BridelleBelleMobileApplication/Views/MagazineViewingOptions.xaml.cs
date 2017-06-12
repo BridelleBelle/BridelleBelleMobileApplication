@@ -35,7 +35,7 @@ namespace BridelleBelleMobileApplication.Views
 					break;
 				case "Buy":
 					ClosePage();
-					await Navigation.PushPopupAsync(new CheckoutOptions(this.Magazine));
+					Payment();
 					break;
 				case "Preview":
 					ClosePage();
@@ -44,6 +44,26 @@ namespace BridelleBelleMobileApplication.Views
 			}
 		}
 
+		public async Task Payment()
+		{
+			if (App.SignedInUser != null)
+			{
+				if (this.Magazine.Price > 0.0)
+				{
+					await Navigation.PushPopupAsync(new CheckoutOptions(this.Magazine));
+				}
+				else
+				{
+					var magazineHelper = new MagazineManager();
+					magazineHelper.AddMagazineToUserInventory(this.Magazine.Id);
+					DisplayAlert("Magazine Purchased", this.Magazine.Name + " was purchased and is now viewable.", "OK");
+				}
+			}
+			else
+			{
+				DisplayAlert("Error", "Please sign in first.", "OK");
+			}
+		}
 		private async void ClosePage()
 		{
 			await Navigation.PopAllPopupAsync();
