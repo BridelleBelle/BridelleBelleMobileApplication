@@ -66,12 +66,9 @@ namespace BridelleBelleMobileApplication
 			base.OnAppearing();
 			try
 			{
-				if (App.AvailableMagazines == null)
-				{
-					var magazineManager = new MagazineManager();
-					App.AvailableMagazines = magazineManager.GetLatest();
-					await GetCovers();
-				}
+				var magazineManager = new MagazineManager();
+				App.AvailableMagazines = magazineManager.GetLatest();
+				await GetCovers();
 			}
 			catch (Exception e)
 			{
@@ -109,11 +106,6 @@ namespace BridelleBelleMobileApplication
 				var img = await imageHelper.GetImage(ImageType.CoverImages,App.AvailableMagazines.ToList()[index].CoverImageFileName);
 				img2.Source = img.Source;
 			}
-		}
-
-		public async void LoginPage(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new SignInPage());
 		}
 	}
 }
