@@ -38,7 +38,6 @@ namespace BridelleBelleMobileApplication.Views
 					Payment();
 					break;
 				case "Preview":
-					ClosePage();
 					await Navigation.PushPopupAsync(new MagazinePreview(this.Magazine));
 					break;
 			}
