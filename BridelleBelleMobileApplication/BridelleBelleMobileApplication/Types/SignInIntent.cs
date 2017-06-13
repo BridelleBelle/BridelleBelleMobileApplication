@@ -4,6 +4,7 @@
 	{
 		Purchasing,
 		PageViewing,
-		Standard
+		Standard,
+		ViewProfile
 	}
 }

@@ -27,6 +27,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Types\SignInRegisterResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types\TabbedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MagazineViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MasterDetail\MasterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MasterDetail\SliderMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Modals\CheckoutOptions.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\SocialMedia.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Voucher.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Modals\SignInPageModal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\UserProfile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\PageView.xaml.cs">
@@ -138,6 +147,21 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Modals\SignInPageModal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MasterDetail\MasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MasterDetail\SliderMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\UserProfile.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

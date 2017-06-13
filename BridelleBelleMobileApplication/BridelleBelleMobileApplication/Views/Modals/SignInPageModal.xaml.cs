@@ -16,6 +16,7 @@ using PayPal.Forms.Abstractions.Enum;
 using BridelleBelleMobileApplication.Types;
 using BridelleBelleMobileApplication.Helpers;
 using BridelleBelleMobileApplication.Models;
+using BridelleBelleMobileApplication.Views;
 namespace BridelleBelleMobileApplication.Views.Modals
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -47,6 +48,10 @@ namespace BridelleBelleMobileApplication.Views.Modals
 				case SignInIntent.PageViewing:
 					await Navigation.PopAllPopupAsync();
 					await Navigation.PushAsync(new HomePage(BridelleBelleMobileApplication.Types.TabbedPage.UserMagazines));
+					break;
+				case SignInIntent.ViewProfile:
+					//await Navigation.PushAsync(new UserProfile());
+					await Navigation.PopAllPopupAsync();
 					break;
 			}
 		}
