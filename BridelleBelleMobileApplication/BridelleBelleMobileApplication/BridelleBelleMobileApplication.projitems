@@ -23,7 +23,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\SignInRegisterHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\UserManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RegisteredUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\SignInIntent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Types\SignInRegisterResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Types\TabbedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MagazineViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Modals\CheckoutOptions.xaml.cs">
       <SubType>Code</SubType>
@@ -61,6 +63,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\MagazineContent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SocialMedia.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Voucher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Modals\SignInPageModal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\PageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -140,6 +145,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Views\Modals\" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Modals\SignInPageModal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

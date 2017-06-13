@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Types;
+using BridelleBelleMobileApplication.Views.Modals;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
 
