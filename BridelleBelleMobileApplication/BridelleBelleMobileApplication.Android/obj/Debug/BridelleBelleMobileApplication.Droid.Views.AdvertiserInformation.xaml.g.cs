@@ -11,8 +11,8 @@
 namespace BridelleBelleMobileApplication.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\danie\\Documents\\BridelleBelleMobileApplication\\BridelleBelleMobileApplic" +
-        "ation\\BridelleBelleMobileApplication\\Views\\AdvertiserInformation.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("F:\\GitHub\\BridelleBelleMobileApplication\\BridelleBelleMobileApplication\\BridelleB" +
+        "elleMobileApplication\\Views\\AdvertiserInformation.xaml")]
     public partial class AdvertiserInformation : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

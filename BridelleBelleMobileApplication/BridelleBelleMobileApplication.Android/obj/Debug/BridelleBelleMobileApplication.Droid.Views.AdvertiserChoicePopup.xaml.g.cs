@@ -11,8 +11,8 @@
 namespace BridelleBelleMobileApplication.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\danie\\Documents\\BridelleBelleMobileApplication\\BridelleBelleMobileApplic" +
-        "ation\\BridelleBelleMobileApplication\\Views\\AdvertiserChoicePopup.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("F:\\GitHub\\BridelleBelleMobileApplication\\BridelleBelleMobileApplication\\BridelleB" +
+        "elleMobileApplication\\Views\\AdvertiserChoicePopup.xaml")]
     public partial class AdvertiserChoicePopup : global::Rg.Plugins.Popup.Pages.PopupPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

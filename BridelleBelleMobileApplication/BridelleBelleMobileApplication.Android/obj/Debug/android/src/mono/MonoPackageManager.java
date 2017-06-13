@@ -100,6 +100,15 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "BridelleBelleMobileApplication.Android.dll" comes first in this list. */
 		"BridelleBelleMobileApplication.Android.dll",
 		"FormsViewGroup.dll",
+		"Microsoft.Azure.DocumentDB.Core.dll",
+		"Microsoft.Data.Edm.dll",
+		"Microsoft.Data.OData.dll",
+		"Microsoft.WindowsAzure.Storage.dll",
+		"Newtonsoft.Json.dll",
+		"Rg.Plugins.Popup.dll",
+		"Rg.Plugins.Popup.Droid.dll",
+		"Rg.Plugins.Popup.Platform.dll",
+		"System.Spatial.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",
 		"Xamarin.Android.Support.v4.dll",
@@ -108,6 +117,7 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.v7.MediaRouter.dll",
 		"Xamarin.Android.Support.v7.RecyclerView.dll",
 		"Xamarin.Android.Support.Vector.Drawable.dll",
+		"Xamarin.Forms.CarouselView.dll",
 		"Xamarin.Forms.Core.dll",
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
@@ -115,5 +125,5 @@ class MonoPackageManager_Resources {
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_25";
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_23";
 }
