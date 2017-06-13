@@ -14,7 +14,7 @@ using BridelleBelleMobileApplication.Helpers;
 using BridelleBelleMobileApplication.Models;
 
 using PayPal.Forms.Abstractions.Enum;
-namespace BridelleBelleMobileApplication.Views
+namespace BridelleBelleMobileApplication.Views.Modals
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CheckoutOptions : PopupPage

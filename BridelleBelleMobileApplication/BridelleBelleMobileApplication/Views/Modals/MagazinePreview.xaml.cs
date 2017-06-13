@@ -11,7 +11,7 @@ using Rg.Plugins.Popup.Extensions;
 using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Helpers;
 
-namespace BridelleBelleMobileApplication.Views
+namespace BridelleBelleMobileApplication.Views.Modals
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MagazinePreview : PopupPage

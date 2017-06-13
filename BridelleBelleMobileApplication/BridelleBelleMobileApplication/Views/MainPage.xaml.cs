@@ -6,6 +6,7 @@ using Xamarin.Forms;
 
 using BridelleBelleMobileApplication.Types;
 using BridelleBelleMobileApplication.Views;
+using BridelleBelleMobileApplication.Views.Modals;
 using BridelleBelleMobileApplication.Helpers;
 using BridelleBelleMobileApplication.Models;
 
