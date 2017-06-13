@@ -18,7 +18,7 @@ namespace BridelleBelleMobileApplication
 		private Magazine Magazine;
 		private List<Image> Images;
 
-        // Pinch
+        // Pinch (needed for the OnPinchUpdate)
         double currentScale = 1;
         double startScale = 1;
         double xOffset = 0;
@@ -53,6 +53,7 @@ namespace BridelleBelleMobileApplication
 
         void OnPinchUpdated(object sender, PinchGestureUpdatedEventArgs e)
         {
+            //Here is the On Pinch Update that is used in the PageView.xaml
             if (e.Status == GestureStatus.Started)
             {
                 startScale = Content.Scale;
@@ -89,7 +90,7 @@ namespace BridelleBelleMobileApplication
             }
         }
 
-        static double Clamp(double self, double min, double max)
+        static double Clamp(double self, double min, double max) // Needed, wouldn't be an extension to double.
         {
             return Math.Min(max, Math.Max(self, min));
         }

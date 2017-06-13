@@ -5,14 +5,14 @@ xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
 xmlns:local="clr-namespace:BridelleBelleMobileApplication"
 x:Class="BridelleBelleMobileApplication.PageView">
         <ContentPage.Content>
-        <!--<local:PinchGestureHelper>
+        <!--<local:PinchGestureHelper> Do not copy this
             <local:PinchGestureHelper.Content>-->
                 <StackLayout>
                     <forms:CarouselView x:Name="MainCarouselView" ItemSelected="MainCarouselView_ItemSelected" >
                         <forms:CarouselView.ItemTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding .}" Aspect="AspectFit" HeightRequest="185" WidthRequest="100" >
-                                    <Image.GestureRecognizers>
+                                    <Image.GestureRecognizers> <!-- This is what need to be inside of the Image, Copy this over -->
                                         <PinchGestureRecognizer  PinchUpdated="OnPinchUpdated"/>
                                     </Image.GestureRecognizers>
                                 </Image>
