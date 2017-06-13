@@ -10,6 +10,12 @@ using BridelleBelleMobileApplication.Helpers;
 using BridelleBelleMobileApplication.Types;
 using BridelleBelleMobileApplication.ViewModels;
 using BridelleBelleMobileApplication.Models;
+using BridelleBelleMobileApplication.Views.Modals;
+
+using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
+using Rg.Plugins.Popup.Extensions;
+
 namespace BridelleBelleMobileApplication
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -27,6 +33,8 @@ namespace BridelleBelleMobileApplication
 
 			if (App.SignedInUser != null)
 			{
+				magazines.IsVisible = false;
+				signin.IsVisible = false;
 				try
 				{
 					Magazines = SetupViewModel();
@@ -40,7 +48,13 @@ namespace BridelleBelleMobileApplication
 			else
 			{
 				header.Text = "Please Sign In";
+				signin.IsVisible = true;
 			}
+		}
+
+		public async void SignIn(object sender, EventArgs e)
+		{
+			await Navigation.PushPopupAsync(new SignInPageModal(SignInIntent.PageViewing, null));
 		}
 
 		public MagazineViewModel SetupViewModel()

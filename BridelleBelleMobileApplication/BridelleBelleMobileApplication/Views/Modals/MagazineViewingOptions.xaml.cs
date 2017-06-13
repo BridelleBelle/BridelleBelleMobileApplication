@@ -10,6 +10,8 @@ using Rg.Plugins.Popup.Services;
 using Rg.Plugins.Popup.Extensions;
 using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Helpers;
+using BridelleBelleMobileApplication.Views.Modals;
+using BridelleBelleMobileApplication.Types;
 using PayPal.Forms.Abstractions.Enum;
 
 namespace BridelleBelleMobileApplication.Views.Modals
@@ -60,7 +62,8 @@ namespace BridelleBelleMobileApplication.Views.Modals
 			}
 			else
 			{
-				DisplayAlert("Error", "Please sign in first.", "OK");
+				await DisplayAlert("Error", "Please sign in first.", "OK");
+				var signInPage = Navigation.PushPopupAsync(new SignInPageModal(SignInIntent.Purchasing,this.Magazine));
 			}
 		}
 		private async void ClosePage()

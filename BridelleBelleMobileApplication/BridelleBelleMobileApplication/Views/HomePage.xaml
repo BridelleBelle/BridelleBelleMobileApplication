@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BridelleBelleMobileApplication"
              x:Class="BridelleBelleMobileApplication.Views.HomePage">
-    <local:MainPage></local:MainPage>
-    <local:UserMagazines></local:UserMagazines>
-    <local:SignInPage></local:SignInPage>
+    <local:MainPage x:Name="main"></local:MainPage>
+    <local:UserMagazines x:Name="usermags"></local:UserMagazines>
 </TabbedPage>
