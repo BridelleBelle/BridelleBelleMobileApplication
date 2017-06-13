@@ -8,6 +8,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BridelleBelleMobileApplication.Helpers;
 using BridelleBelleMobileApplication.Views;
+using BridelleBelleMobileApplication.Views.Modals;
+
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
 namespace BridelleBelleMobileApplication

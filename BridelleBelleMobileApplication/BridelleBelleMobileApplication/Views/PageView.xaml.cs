@@ -11,6 +11,7 @@ using Rg.Plugins.Popup.Pages;
 using BridelleBelleMobileApplication.Views;
 using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Types;
+using BridelleBelleMobileApplication.Views.Modals;
 
 namespace BridelleBelleMobileApplication
 {

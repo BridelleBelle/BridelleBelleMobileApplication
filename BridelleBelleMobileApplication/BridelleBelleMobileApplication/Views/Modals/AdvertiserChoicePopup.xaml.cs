@@ -10,7 +10,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BridelleBelleMobileApplication.Models;
 
-namespace BridelleBelleMobileApplication.Views
+namespace BridelleBelleMobileApplication.Views.Modals
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AdvertiserChoicePopup : PopupPage

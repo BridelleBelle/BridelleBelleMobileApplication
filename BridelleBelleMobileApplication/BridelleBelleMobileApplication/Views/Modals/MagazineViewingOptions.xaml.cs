@@ -12,7 +12,7 @@ using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Helpers;
 using PayPal.Forms.Abstractions.Enum;
 
-namespace BridelleBelleMobileApplication.Views
+namespace BridelleBelleMobileApplication.Views.Modals
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MagazineViewingOptions : PopupPage
