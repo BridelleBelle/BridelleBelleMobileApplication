@@ -50,7 +50,7 @@ namespace BridelleBelleMobileApplication.Views.Modals
 					await Navigation.PushAsync(new HomePage(BridelleBelleMobileApplication.Types.TabbedPage.UserMagazines));
 					break;
 				case SignInIntent.ViewProfile:
-					//await Navigation.PushAsync(new UserProfile());
+					await Navigation.PushAsync(new UserProfile());
 					await Navigation.PopAllPopupAsync();
 					break;
 			}

@@ -36,7 +36,7 @@ namespace BridelleBelleMobileApplication.Views.MasterDetail
 		{
 			if(App.SignedInUser != null)
 			{
-				//await Navigation.PushAsync(new UserProfile());
+				await Navigation.PushAsync(new UserProfile());
 			}
 			else
 			{

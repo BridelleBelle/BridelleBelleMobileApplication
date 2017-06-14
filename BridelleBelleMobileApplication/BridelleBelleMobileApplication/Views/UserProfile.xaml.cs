@@ -20,7 +20,7 @@ namespace BridelleBelleMobileApplication.Views
 		public async void Logout(object sender,EventArgs e)
 		{
 			App.SignedInUser = null;
-			await Navigation.PushAsync(new HomePage(BridelleBelleMobileApplication.Types.HomePage));
+			await Navigation.PushAsync(new HomePage(BridelleBelleMobileApplication.Types.TabbedPage.HomePage));
 		}
 	}
 }

@@ -4,5 +4,5 @@
              x:Class="BridelleBelleMobileApplication.Views.MasterDetail.SliderMenu"
              Title="Menu"
              BackgroundColor="#f0f0f5">
-    <ListView x:Name="sliderMenu"></ListView>
+    <ListView x:Name="sliderMenu" ItemSelected="UserProfileLoad"></ListView>
 </ContentPage>
