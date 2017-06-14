@@ -58,33 +58,26 @@ namespace BridelleBelleMobileApplication.Views.Modals
 		}
 		public async void Login(object sender, EventArgs e)
 		{
-			try
+			if (usernameTxt.Text != "" || passwordTxt.Text != "")
 			{
-				if (usernameTxt.Text != "" || passwordTxt.Text != "")
+				var userDatabase = new UserManager();
+				var user = await userDatabase.GetUser(usernameTxt.Text, passwordTxt.Text);
+				if (user != null)
 				{
-					var userDatabase = new UserManager();
-					var user = await userDatabase.GetUser(usernameTxt.Text, passwordTxt.Text);
-					if (user != null)
-					{
-						App.SignedInUser = user;
+					App.SignedInUser = user;
 
-						var magazineManager = new MagazineManager();
-						if (App.SignedInUser.Magazines != null)
-						{
-							App.SignedInUser.OwnedMagazines = await magazineManager.GetMagazines(App.SignedInUser.Magazines.ToList());
-						}
-
-						Proceed();
-					}
-					else
+					var magazineManager = new MagazineManager();
+					if (App.SignedInUser.Magazines != null)
 					{
-						DisplayAlert("Error", "Error signing in. Please check your username and password and try again.", "OK");
+						App.SignedInUser.OwnedMagazines = await magazineManager.GetMagazines(App.SignedInUser.Magazines.ToList());
 					}
+
+					Proceed();
 				}
-			}
-			catch(Exception ex)
-			{
-
+				else
+				{
+					DisplayAlert("Error", "Error signing in. Please check your username and password and try again.", "OK");
+				}
 			}
 		}
 
