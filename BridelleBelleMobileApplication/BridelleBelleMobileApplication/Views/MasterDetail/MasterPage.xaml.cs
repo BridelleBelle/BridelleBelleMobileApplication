@@ -12,11 +12,12 @@ namespace BridelleBelleMobileApplication.Views.MasterDetail
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MasterPage : MasterDetailPage
 	{
-		public MasterPage ()
+		public MasterPage (BridelleBelleMobileApplication.Types.TabbedPage tab)
 		{
 			InitializeComponent ();
 			this.Master = new SliderMenu();
-			this.Detail = new NavigationPage(new HomePage(BridelleBelleMobileApplication.Types.TabbedPage.HomePage));
+			this.Detail = new NavigationPage(new HomePage(tab));
+			NavigationPage.SetHasNavigationBar(this, false);
 		}
 	}
 }

@@ -17,6 +17,7 @@ using BridelleBelleMobileApplication.Types;
 using BridelleBelleMobileApplication.Helpers;
 using BridelleBelleMobileApplication.Models;
 using BridelleBelleMobileApplication.Views;
+using BridelleBelleMobileApplication.Views.MasterDetail;
 namespace BridelleBelleMobileApplication.Views.Modals
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -47,36 +48,43 @@ namespace BridelleBelleMobileApplication.Views.Modals
 					break;
 				case SignInIntent.PageViewing:
 					await Navigation.PopAllPopupAsync();
-					await Navigation.PushAsync(new HomePage(BridelleBelleMobileApplication.Types.TabbedPage.UserMagazines));
+						await Navigation.PushAsync(new MasterPage(BridelleBelleMobileApplication.Types.TabbedPage.UserMagazines));
 					break;
 				case SignInIntent.ViewProfile:
-					await Navigation.PushAsync(new UserProfile());
 					await Navigation.PopAllPopupAsync();
+					await Navigation.PushAsync(new UserProfile());
 					break;
 			}
 		}
 		public async void Login(object sender, EventArgs e)
 		{
-			if (usernameTxt.Text != "" || passwordTxt.Text != "")
+			try
 			{
-				var userDatabase = new UserManager();
-				var user = await userDatabase.GetUser(usernameTxt.Text, passwordTxt.Text);
-				if (user != null)
+				if (usernameTxt.Text != "" || passwordTxt.Text != "")
 				{
-					App.SignedInUser = user;
-
-					var magazineManager = new MagazineManager();
-					if (App.SignedInUser.Magazines != null)
+					var userDatabase = new UserManager();
+					var user = await userDatabase.GetUser(usernameTxt.Text, passwordTxt.Text);
+					if (user != null)
 					{
-						App.SignedInUser.OwnedMagazines = await magazineManager.GetMagazines(App.SignedInUser.Magazines.ToList());
-					}
+						App.SignedInUser = user;
 
-					Proceed();
+						var magazineManager = new MagazineManager();
+						if (App.SignedInUser.Magazines != null)
+						{
+							App.SignedInUser.OwnedMagazines = await magazineManager.GetMagazines(App.SignedInUser.Magazines.ToList());
+						}
+
+						Proceed();
+					}
+					else
+					{
+						DisplayAlert("Error", "Error signing in. Please check your username and password and try again.", "OK");
+					}
 				}
-				else
-				{
-					DisplayAlert("Error", "Error signing in. Please check your username and password and try again.", "OK");
-				}
+			}
+			catch(Exception ex)
+			{
+
 			}
 		}
 

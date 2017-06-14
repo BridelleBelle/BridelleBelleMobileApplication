@@ -28,6 +28,7 @@ namespace BridelleBelleMobileApplication.Views.MasterDetail
 			switch (e.SelectedItem.ToString())
 			{
 				case "User Profile":
+					UserProfileLoad();
 					break;
 			}
 		}

@@ -17,7 +17,7 @@ namespace BridelleBelleMobileApplication
 		public App ()
 		{
 			InitializeComponent();
-			MainPage = new MasterPage();
+			MainPage = new NavigationPage(new MasterPage(BridelleBelleMobileApplication.Types.TabbedPage.HomePage));
 		}
 
 		protected override void OnStart ()
