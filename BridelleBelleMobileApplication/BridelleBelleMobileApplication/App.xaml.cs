@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using BridelleBelleMobileApplication.Database;
 using BridelleBelleMobileApplication.Models;
-using BridelleBelleMobileApplication.Views;
+using BridelleBelleMobileApplication.Views.MasterDetail;
 using Xamarin.Forms;
 
 namespace BridelleBelleMobileApplication
@@ -18,7 +18,7 @@ namespace BridelleBelleMobileApplication
 		public App ()
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage(new HomePage(BridelleBelleMobileApplication.Types.TabbedPage.HomePage));
+			MainPage = new NavigationPage(new MasterPage(BridelleBelleMobileApplication.Types.TabbedPage.HomePage));
 		}
 
 		protected override void OnStart ()
