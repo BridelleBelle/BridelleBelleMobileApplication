@@ -11,9 +11,10 @@ namespace BridelleBelleMobileApplication
 {
 	public partial class App : Application
 	{
-	    public static List<Magazine> AvailableMagazines;
+		public static List<Magazine> AvailableMagazines;
 		public static Models.User SignedInUser;
-
+		public static List<string> NEMagCovers;
+		public static List<string> YorkMagCovers;
 		public App ()
 		{
 			InitializeComponent();

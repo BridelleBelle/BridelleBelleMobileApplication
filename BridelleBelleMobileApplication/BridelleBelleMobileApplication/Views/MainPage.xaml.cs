@@ -21,6 +21,10 @@ namespace BridelleBelleMobileApplication
 		{
 			InitializeComponent();
 			Setup();
+			if(App.AvailableMagazines != null)
+			{
+				SetCovers();
+			}
 		}
 
 		void Setup()
@@ -66,9 +70,19 @@ namespace BridelleBelleMobileApplication
 			base.OnAppearing();
 			try
 			{
-				var magazineManager = new MagazineManager();
-				App.AvailableMagazines = magazineManager.GetLatest();
-				await GetCovers();
+				if (App.AvailableMagazines == null)
+				{
+					var magazineManager = new MagazineManager();
+					App.AvailableMagazines = magazineManager.GetLatest();
+
+
+					if (App.NEMagCovers == null || App.YorkMagCovers == null)
+					{
+						await GetCovers();
+					}
+
+					SetCovers();
+				}
 			}
 			catch (Exception e)
 			{
@@ -78,34 +92,51 @@ namespace BridelleBelleMobileApplication
 
 		public async Task GetCovers()
 		{
-			for(var i = 0;i< 4; i++)
+			try
 			{
-				if (App.AvailableMagazines.ToList()[i].Version == MagazineVersion.NorthEast)
+				foreach (var mag in App.AvailableMagazines)
 				{
-					await ValidateSource(NEMag1, NEMag2, i,MagazineVersion.NorthEast);
+					var imageHelper = new ImageHelper();
+					mag.CoverImageUri = imageHelper.GetImageUri(ImageType.CoverImages, mag.CoverImageFileName);
 				}
-				else
+
+				var mags = App.AvailableMagazines;
+				var neMags = new List<Magazine>();
+				var yorkMags = new List<Magazine>();
+
+				foreach(var mag in mags)
 				{
-					await ValidateSource(YMag1, YMag2, i,MagazineVersion.Yorkshire);
+					if(mag.Version == MagazineVersion.NorthEast)
+					{
+						neMags.Add(mag);
+					}
+					else
+					{
+						yorkMags.Add(mag);
+					}
 				}
+
+				CacheCovers(neMags.OrderByDescending(m => m.ReleaseDate).ToList(), yorkMags.OrderByDescending(m => m.ReleaseDate).ToList());
 			}
+			catch(Exception exception) { }
 		}
 
-		public async Task ValidateSource(Image img1,Image img2,int index,MagazineVersion version)
+		private void CacheCovers(List<Magazine> orderedNECovers, List<Magazine> orderedYorkMags)
 		{
-			var imageHelper = new ImageHelper();
-			if (img1.Source == null && img2.Source == null)
-			{
-				//get latest - can do this by date or something laters.
-				var latest = App.AvailableMagazines.OrderByDescending(m => m.Issue).FirstOrDefault(m => m.Version == version);
-				var img = await imageHelper.GetImage(ImageType.CoverImages,latest.CoverImageFileName);
-				img1.Source = img.Source;
-			}
-			else if (img1.Source != null && img2.Source == null)
-			{
-				var img = await imageHelper.GetImage(ImageType.CoverImages,App.AvailableMagazines.ToList()[index].CoverImageFileName);
-				img2.Source = img.Source;
-			}
+			App.NEMagCovers = new List<string>();
+			App.YorkMagCovers = new List<string>();
+			App.NEMagCovers.Add(orderedNECovers[0].CoverImageUri);
+			App.NEMagCovers.Add(orderedNECovers[1].CoverImageUri);
+			App.YorkMagCovers.Add(orderedYorkMags[0].CoverImageUri);
+			App.YorkMagCovers.Add(orderedYorkMags[1].CoverImageUri);
+		}
+
+		private void SetCovers()
+		{
+			NEMag1.Source = App.NEMagCovers[0];
+			NEMag2.Source = App.NEMagCovers[1];
+			YMag1.Source = App.YorkMagCovers[0];
+			YMag2.Source = App.YorkMagCovers[1];
 		}
 	}
 }
