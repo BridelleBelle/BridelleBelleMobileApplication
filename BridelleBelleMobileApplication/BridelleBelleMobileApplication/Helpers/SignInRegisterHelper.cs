@@ -11,11 +11,11 @@ namespace BridelleBelleMobileApplication.Helpers
 {
 	public class SignInRegisterHelper
 	{
-		DocumnetDBClient Client;
+        DocumentDBClient Client;
 
 		public SignInRegisterHelper()
 		{
-			Client = new DocumnetDBClient();
+			Client = new DocumentDBClient();
 		}
 
 		public async Task<SignInRegisterResponse> RegisterUser(string username, string password)

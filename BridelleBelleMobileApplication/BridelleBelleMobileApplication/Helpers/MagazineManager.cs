@@ -9,12 +9,12 @@ namespace BridelleBelleMobileApplication
 {
 	public class MagazineManager
 	{
-		private DocumnetDBClient DocumentClient;
+		private DocumentDBClient DocumentClient;
 		private ImageClient ImageClient;
 
 		public MagazineManager()
 		{
-			DocumentClient = new DocumnetDBClient();
+			DocumentClient = new DocumentDBClient();
 			ImageClient = new ImageClient();
 		}
 

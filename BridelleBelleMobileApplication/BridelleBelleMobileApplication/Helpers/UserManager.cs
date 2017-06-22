@@ -9,11 +9,11 @@ namespace BridelleBelleMobileApplication.Helpers
 {
 	public class UserManager
 	{
-		DocumnetDBClient Client;
+        DocumentDBClient Client;
 
 		public UserManager()
 		{
-			Client = new DocumnetDBClient();
+			Client = new DocumentDBClient();
 		}
 
 		public async Task< Models.User> GetUser(string username, string password)
